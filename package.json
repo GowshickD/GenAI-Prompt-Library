@@ -296,12 +296,12 @@
         },
         "promptLibrary.azureOpenAI.endpoint": {
           "type": "string",
-          "default": "https://openai-humana-demo.openai.azure.com/",
+          "default": "",
           "description": "Azure OpenAI endpoint URL"
         },
         "promptLibrary.azureOpenAI.key": {
           "type": "string",
-          "default": "38f3uEfMqGrmlLTYB8phtBmUiaNaeYY4EkCVlutNRlmH5QHqh3DIJQQJ99CAACYeBjFXJ3w3AAABACOG6d6X",
+          "default": "",
           "description": "Azure OpenAI API key"
         },
         "promptLibrary.azureOpenAI.deploymentName": {
