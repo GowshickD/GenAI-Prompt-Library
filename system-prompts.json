@@ -1,0 +1,3879 @@
+{
+  "version": "2.0",
+  "categories": [
+    {
+      "id": "dotnet",
+      "label": ".NET",
+      "type": "system",
+      "groups": [
+        {
+          "id": "architecture",
+          "label": "Architecture Patterns",
+          "prompts": [
+            {
+              "id": "dotnet-clean-architecture-skeleton",
+              "label": "Clean Architecture Solution Template",
+              "prompt": "Generate a .NET solution for {project} using Clean Architecture (Domain, Application, Infrastructure, Web). Include DI wiring, MediatR use cases, validation, logging, and example endpoint. Provide folder structure and minimal code stubs.",
+              "tags": [
+                "dotnet",
+                "clean-architecture",
+                "mediatr",
+                "ddd",
+                "project-structure"
+              ]
+            },
+            {
+              "id": "dotnet-architecture-boundaries",
+              "label": "Dependency Rule Enforcement",
+              "prompt": "Add tooling/lint rules to enforce dependency boundaries.",
+              "tags": [
+                "architecture",
+                "boundaries",
+                "dotnet",
+                "lint"
+              ]
+            },
+            {
+              "id": "dotnet-architecture-modularize",
+              "label": "Modularization Plan",
+              "prompt": "Break {system} into modules/services with seams.",
+              "tags": [
+                "architecture",
+                "dotnet",
+                "modular-monolith"
+              ]
+            },
+            {
+              "id": "dotnet-architecture-structure",
+              "label": "Project Structure & Boundaries",
+              "prompt": "Propose scalable project structure for {project} with boundaries and dependency rules.",
+              "tags": [
+                "architecture",
+                "dotnet",
+                "project-structure"
+              ]
+            },
+            {
+              "id": "dotnet-architecture-usecase",
+              "label": "Use Case Template",
+              "prompt": "Create use case template for {feature} with ports/adapters.",
+              "tags": [
+                "architecture",
+                "clean-architecture",
+                "dotnet"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "data",
+          "label": "Data Access",
+          "prompts": [
+            {
+              "id": "dotnet-data-migrations",
+              "label": "Database Migrations",
+              "prompt": "Create migration strategy for {schema_change} including zero-downtime rollout.",
+              "tags": [
+                "data",
+                "database",
+                "dotnet",
+                "migrations"
+              ]
+            },
+            {
+              "id": "dotnet-efcore-repository-uow",
+              "label": "EF Core Repository & Unit of Work",
+              "prompt": "Create an EF Core repository pattern with Unit of Work for transactional operations. Include async methods, paging, filtering, and support for specification/query pattern.",
+              "tags": [
+                "dotnet",
+                "ef-core",
+                "repository",
+                "unit-of-work",
+                "data-access"
+              ]
+            },
+            {
+              "id": "dotnet-data-indexing",
+              "label": "Indexing & Query Optimization",
+              "prompt": "Analyze queries for {entity} and propose indexes and pagination.",
+              "tags": [
+                "data",
+                "database",
+                "dotnet",
+                "indexing",
+                "performance"
+              ]
+            },
+            {
+              "id": "dotnet-data-soft-delete",
+              "label": "Soft Delete & Auditing",
+              "prompt": "Add soft delete and auditing metadata for {entity}.",
+              "tags": [
+                "auditing",
+                "data",
+                "database",
+                "dotnet",
+                "soft-delete"
+              ]
+            },
+            {
+              "id": "dotnet-data-transactions",
+              "label": "Transactions & Consistency",
+              "prompt": "Implement transactional behavior for {use_case} and explain isolation levels.",
+              "tags": [
+                "consistency",
+                "data",
+                "database",
+                "dotnet",
+                "transactions"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "observability",
+          "label": "Observability & Middleware",
+          "prompts": [
+            {
+              "id": "dotnet-middleware-error-logging",
+              "label": "Error Handling & Logging Middleware",
+              "prompt": "Build ASP.NET Core middleware for centralized exception handling and structured logging (Serilog). Return RFC7807 ProblemDetails with correlation IDs.",
+              "tags": [
+                "dotnet",
+                "aspnet-core",
+                "middleware",
+                "logging",
+                "serilog"
+              ]
+            },
+            {
+              "id": "dotnet-background-service",
+              "label": "Hosted BackgroundService",
+              "prompt": "Implement a BackgroundService that processes queued jobs with graceful shutdown, retry/backoff, cancellation tokens, and telemetry.",
+              "tags": [
+                "dotnet",
+                "background-service",
+                "worker",
+                "resilience",
+                "telemetry"
+              ]
+            },
+            {
+              "id": "dotnet-observability-otel",
+              "label": "OpenTelemetry Instrumentation",
+              "prompt": "Instrument {service} with OpenTelemetry traces and metrics: spans, attributes, propagation, sampling.",
+              "tags": [
+                "dotnet",
+                "metrics",
+                "observability",
+                "opentelemetry",
+                "tracing"
+              ]
+            },
+            {
+              "id": "dotnet-resilience-polly",
+              "label": "Resilience with Polly",
+              "prompt": "Add resilience to outgoing HTTP calls using IHttpClientFactory + Polly policies (retry, circuit breaker, timeout, bulkhead). Include jittered backoff and telemetry.",
+              "tags": [
+                "dotnet",
+                "polly",
+                "resilience",
+                "httpclientfactory",
+                "telemetry"
+              ]
+            },
+            {
+              "id": "dotnet-observability-logging",
+              "label": "Structured Logging Standard",
+              "prompt": "Define structured logging for {service} including correlation IDs and redaction rules.",
+              "tags": [
+                "dotnet",
+                "logging",
+                "observability"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "label": "Security",
+          "prompts": [
+            {
+              "id": "dotnet-security-authz-policy",
+              "label": "Authorization Policy Design",
+              "prompt": "Design authorization policies for {app} (roles/claims/ABAC), least privilege, and tests.",
+              "tags": [
+                "authorization",
+                "dotnet",
+                "security"
+              ]
+            },
+            {
+              "id": "dotnet-security-validation",
+              "label": "Input Validation & Sanitization",
+              "prompt": "Harden input handling for {endpoint} including SSRF/path traversal defenses.",
+              "tags": [
+                "dotnet",
+                "security",
+                "validation"
+              ]
+            },
+            {
+              "id": "dotnet-auth-jwt",
+              "label": "JWT Authentication & Authorization",
+              "prompt": "Configure JWT authentication in ASP.NET Core, add role/claim-based authorization policies, and secure endpoints with proper 401/403 responses.",
+              "tags": [
+                "dotnet",
+                "aspnet-core",
+                "jwt",
+                "authentication",
+                "authorization"
+              ]
+            },
+            {
+              "id": "dotnet-security-oauth",
+              "label": "OAuth2/OIDC Flow Selection",
+              "prompt": "Choose OAuth2/OIDC flow for {client_type} with PKCE and refresh strategy.",
+              "tags": [
+                "dotnet",
+                "oauth2",
+                "oidc",
+                "security"
+              ]
+            },
+            {
+              "id": "dotnet-security-secrets",
+              "label": "Secrets Management",
+              "prompt": "Propose secrets management for {system} including rotation and least privilege.",
+              "tags": [
+                "dotnet",
+                "secrets",
+                "security"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "label": "Testing",
+          "prompts": [
+            {
+              "id": "dotnet-cqrs-mediatr",
+              "label": "CQRS with MediatR",
+              "prompt": "Implement CQRS for {feature} using MediatR: Command, Query, Handlers, Validators, and pipeline behaviors (logging, validation). Include unit tests.",
+              "tags": [
+                "dotnet",
+                "cqrs",
+                "mediatr",
+                "validation",
+                "testing"
+              ]
+            },
+            {
+              "id": "dotnet-testing-integration-tests",
+              "label": "Integration Test Template",
+              "prompt": "Create an integration test setup for {target} including seeding, teardown, and assertions for success + failure.",
+              "tags": [
+                "dotnet",
+                "integration-tests",
+                "testing"
+              ]
+            },
+            {
+              "id": "dotnet-integration-tests-webapplicationfactory",
+              "label": "Integration Tests (WebApplicationFactory)",
+              "prompt": "Create integration tests for ASP.NET Core API {api} using WebApplicationFactory, test server, in-memory/testcontainers DB, and assertions for auth, validation, and error responses.",
+              "tags": [
+                "dotnet",
+                "testing",
+                "integration-tests",
+                "webapplicationfactory",
+                "testcontainers"
+              ]
+            },
+            {
+              "id": "dotnet-testing-unit-tests-edge",
+              "label": "Unit Tests (Edge Cases)",
+              "prompt": "Write comprehensive unit tests for {target} focusing on edge cases, boundary values, and exception paths. Use Arrange/Act/Assert.",
+              "tags": [
+                "dotnet",
+                "edge-cases",
+                "testing",
+                "unit-tests"
+              ]
+            },
+            {
+              "id": "dotnet-xunit-moq",
+              "label": "xUnit Unit Tests with Moq",
+              "prompt": "Write xUnit tests for a service using Moq to mock dependencies. Include Arrange/Act/Assert, edge cases, and verifying calls and exceptions.",
+              "tags": [
+                "dotnet",
+                "xunit",
+                "moq",
+                "testing",
+                "unit-tests"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "web",
+          "label": "Web API",
+          "prompts": [
+            {
+              "id": "dotnet-web-versioning",
+              "label": "API Versioning Strategy",
+              "prompt": "Add API versioning to {service} and provide OpenAPI examples.",
+              "tags": [
+                "api",
+                "dotnet",
+                "openapi",
+                "versioning",
+                "web"
+              ]
+            },
+            {
+              "id": "dotnet-aspnet-core-webapi",
+              "label": "ASP.NET Core Web API Endpoint",
+              "prompt": "Implement an ASP.NET Core Web API endpoint with request DTO validation (DataAnnotations or FluentValidation), proper HTTP status codes, global error handling middleware, and OpenAPI/Swagger annotations.",
+              "tags": [
+                "dotnet",
+                "aspnet-core",
+                "webapi",
+                "validation",
+                "swagger"
+              ]
+            },
+            {
+              "id": "dotnet-di-options",
+              "label": "Dependency Injection & Options Pattern",
+              "prompt": "Configure services using built-in DI, bind configuration to strongly-typed options with validation, and demonstrate constructor injection in controllers/services.",
+              "tags": [
+                "dotnet",
+                "aspnet-core",
+                "dependency-injection",
+                "options",
+                "configuration"
+              ]
+            },
+            {
+              "id": "dotnet-web-health",
+              "label": "Health Checks & Readiness/Liveness",
+              "prompt": "Implement health checks for {service} and readiness vs liveness.",
+              "tags": [
+                "dotnet",
+                "health",
+                "observability",
+                "web"
+              ]
+            },
+            {
+              "id": "dotnet-minimal-api",
+              "label": "Minimal API with Validation",
+              "prompt": "Create a Minimal API endpoint using ASP.NET Core with input validation, endpoint filters, proper status codes, and OpenAPI documentation.",
+              "tags": [
+                "dotnet",
+                "aspnet-core",
+                "minimal-api",
+                "validation",
+                "openapi"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "angular",
+      "label": "Angular",
+      "type": "system",
+      "groups": [
+        {
+          "id": "architecture",
+          "label": "Architecture",
+          "prompts": [
+            {
+              "id": "angular-architecture-boundaries",
+              "label": "Dependency Rule Enforcement",
+              "prompt": "Add tooling/lint rules to enforce dependency boundaries.",
+              "tags": [
+                "angular",
+                "architecture",
+                "boundaries",
+                "lint"
+              ]
+            },
+            {
+              "id": "angular-architecture-feature-slicing",
+              "label": "Feature-based Architecture (Slicing)",
+              "prompt": "Propose an Angular app architecture for {app} using feature modules/standalone features, core/shared layers, and domain-driven feature slicing. Include folder structure, lint rules, and boundaries.",
+              "tags": [
+                "angular",
+                "architecture",
+                "project-structure",
+                "best-practices"
+              ]
+            },
+            {
+              "id": "angular-architecture-modularize",
+              "label": "Modularization Plan",
+              "prompt": "Break {system} into modules/services with seams.",
+              "tags": [
+                "angular",
+                "architecture",
+                "modular-monolith"
+              ]
+            },
+            {
+              "id": "angular-architecture-structure",
+              "label": "Project Structure & Boundaries",
+              "prompt": "Propose scalable project structure for {project} with boundaries and dependency rules.",
+              "tags": [
+                "angular",
+                "architecture",
+                "project-structure"
+              ]
+            },
+            {
+              "id": "angular-architecture-usecase",
+              "label": "Use Case Template",
+              "prompt": "Create use case template for {feature} with ports/adapters.",
+              "tags": [
+                "angular",
+                "architecture",
+                "clean-architecture"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "data",
+          "label": "Data & API",
+          "prompts": [
+            {
+              "id": "angular-http-interceptor",
+              "label": "Auth & Error Interceptor",
+              "prompt": "Write an HTTP interceptor that attaches Bearer tokens, handles 401/403, refreshes tokens, and maps API errors to friendly messages.",
+              "tags": [
+                "angular",
+                "http",
+                "interceptors",
+                "authentication",
+                "errors"
+              ]
+            },
+            {
+              "id": "angular-data-migrations",
+              "label": "Database Migrations",
+              "prompt": "Create migration strategy for {schema_change} including zero-downtime rollout.",
+              "tags": [
+                "angular",
+                "data",
+                "database",
+                "migrations"
+              ]
+            },
+            {
+              "id": "angular-http-service",
+              "label": "HttpClient Service + RxJS",
+              "prompt": "Build an Angular service using HttpClient for CRUD with interceptors for auth and error handling. Return typed Observables and use retry/backoff.",
+              "tags": [
+                "angular",
+                "httpclient",
+                "rxjs",
+                "interceptors",
+                "services"
+              ]
+            },
+            {
+              "id": "angular-data-indexing",
+              "label": "Indexing & Query Optimization",
+              "prompt": "Analyze queries for {entity} and propose indexes and pagination.",
+              "tags": [
+                "angular",
+                "data",
+                "database",
+                "indexing",
+                "performance"
+              ]
+            },
+            {
+              "id": "angular-data-transactions",
+              "label": "Transactions & Consistency",
+              "prompt": "Implement transactional behavior for {use_case} and explain isolation levels.",
+              "tags": [
+                "angular",
+                "consistency",
+                "data",
+                "database",
+                "transactions"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "forms",
+          "label": "Forms",
+          "prompts": [
+            {
+              "id": "angular-forms-dynamic",
+              "label": "Dynamic Form Builder",
+              "prompt": "Build a dynamic form builder for {schema} with conditional logic and server-driven validation.",
+              "tags": [
+                "angular",
+                "dynamic-forms",
+                "forms"
+              ]
+            },
+            {
+              "id": "angular-forms-wizard",
+              "label": "Multi-step Wizard Form",
+              "prompt": "Create multi-step wizard form for {flow} with step validation and persistence.",
+              "tags": [
+                "angular",
+                "forms",
+                "wizard"
+              ]
+            },
+            {
+              "id": "angular-reactive-form",
+              "label": "Reactive Form with Validation",
+              "prompt": "Create a Reactive Form with custom validators, async validation (unique email), error messaging, and form-level submission handling.",
+              "tags": [
+                "angular",
+                "forms",
+                "reactive-forms",
+                "validation"
+              ]
+            },
+            {
+              "id": "angular-forms-server-errors",
+              "label": "Server-side Error Mapping",
+              "prompt": "Map server-side validation errors to fields for {form_case}.",
+              "tags": [
+                "angular",
+                "api",
+                "errors",
+                "forms"
+              ]
+            },
+            {
+              "id": "angular-forms-validation",
+              "label": "Validation Rules & Error UX",
+              "prompt": "Create validation rules for {form_case} with accessible errors and submit flow.",
+              "tags": [
+                "a11y",
+                "angular",
+                "forms",
+                "validation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "label": "Performance",
+          "prompts": [
+            {
+              "id": "angular-performance-bundle",
+              "label": "Bundle/Startup Optimization",
+              "prompt": "Optimize startup/bundle size for {app} using code splitting, tree shaking, dependency audits.",
+              "tags": [
+                "angular",
+                "optimization",
+                "performance"
+              ]
+            },
+            {
+              "id": "angular-performance-change-detection",
+              "label": "Change Detection Performance",
+              "prompt": "Optimize Angular performance for {screen}. Apply OnPush, trackBy, async pipe, defer/lazy components, and RxJS best practices. Provide before/after rationale.",
+              "tags": [
+                "angular",
+                "performance",
+                "change-detection",
+                "onpush",
+                "rxjs"
+              ]
+            },
+            {
+              "id": "angular-performance-virtualization",
+              "label": "List Virtualization",
+              "prompt": "Apply list virtualization for {list_view} and explain tradeoffs.",
+              "tags": [
+                "a11y",
+                "angular",
+                "performance",
+                "virtualization"
+              ]
+            },
+            {
+              "id": "angular-performance-profiling",
+              "label": "Profiling Steps",
+              "prompt": "Profile {app_or_view} and identify bottlenecks with step-by-step instructions.",
+              "tags": [
+                "angular",
+                "performance",
+                "profiling"
+              ]
+            },
+            {
+              "id": "angular-standalone-component",
+              "label": "Standalone Component (OnPush)",
+              "prompt": "Create an Angular standalone component with OnPush change detection, typed @Input/@Output, accessible template, and reactive signal or RxJS state.",
+              "tags": [
+                "angular",
+                "components",
+                "standalone",
+                "onpush",
+                "signals"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "routing",
+          "label": "Routing",
+          "prompts": [
+            {
+              "id": "angular-route-guard",
+              "label": "Auth Route Guard",
+              "prompt": "Implement a CanActivate route guard checking JWT auth state and roles, redirecting to login when unauthenticated, with unit tests.",
+              "tags": [
+                "angular",
+                "routing",
+                "guards",
+                "authentication"
+              ]
+            },
+            {
+              "id": "angular-routing-lazy",
+              "label": "Lazy Loading & Code Splitting",
+              "prompt": "Add lazy loading/code splitting for routes in {app}.",
+              "tags": [
+                "angular",
+                "lazy-loading",
+                "performance",
+                "routing"
+              ]
+            },
+            {
+              "id": "angular-lazy-routes",
+              "label": "Lazy-loaded Routes",
+              "prompt": "Configure Angular routing with lazy-loaded feature modules, preload strategies, and a not-found route with redirect rules.",
+              "tags": [
+                "angular",
+                "routing",
+                "lazy-loading",
+                "performance"
+              ]
+            },
+            {
+              "id": "angular-routing-errors",
+              "label": "Not Found & Error Boundaries",
+              "prompt": "Add not-found route and error boundaries for {app} with logging.",
+              "tags": [
+                "angular",
+                "errors",
+                "observability",
+                "routing"
+              ]
+            },
+            {
+              "id": "angular-routing-protected",
+              "label": "Protected Routes",
+              "prompt": "Implement protected routes for {app} including auth checks, RBAC, and redirects.",
+              "tags": [
+                "angular",
+                "routing",
+                "security"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "state",
+          "label": "State Management",
+          "prompts": [
+            {
+              "id": "angular-state-async",
+              "label": "Async Data & Caching",
+              "prompt": "Implement async fetching for {resource} with caching, retries, optimistic updates.",
+              "tags": [
+                "angular",
+                "caching",
+                "data-fetching",
+                "state",
+                "state-management"
+              ]
+            },
+            {
+              "id": "angular-ngrx-store",
+              "label": "NgRx Store + Effects",
+              "prompt": "Set up NgRx store with actions, reducers, selectors, and effects for an entity feature, including optimistic updates and error handling.",
+              "tags": [
+                "angular",
+                "ngrx",
+                "state-management",
+                "effects"
+              ]
+            },
+            {
+              "id": "angular-state-effects",
+              "label": "Side Effects Handling",
+              "prompt": "Handle side effects for {feature} with cancellation/debounce and error recovery.",
+              "tags": [
+                "angular",
+                "effects",
+                "state",
+                "state-management"
+              ]
+            },
+            {
+              "id": "angular-state-persist",
+              "label": "State Persistence",
+              "prompt": "Persist state for {app} with versioning and hydration strategy.",
+              "tags": [
+                "angular",
+                "persistence",
+                "state",
+                "state-management"
+              ]
+            },
+            {
+              "id": "angular-state-slice",
+              "label": "State Slice Design",
+              "prompt": "Design state slices for {feature} with normalized entities and selectors.",
+              "tags": [
+                "angular",
+                "architecture",
+                "state",
+                "state-management"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "label": "Testing",
+          "prompts": [
+            {
+              "id": "angular-unit-test",
+              "label": "Component Unit Tests",
+              "prompt": "Write Angular unit tests with TestBed for a component, including DOM interaction, @Input/@Output tests, and service mock injection.",
+              "tags": [
+                "angular",
+                "testing",
+                "karma",
+                "jasmine",
+                "unit-tests"
+              ]
+            },
+            {
+              "id": "angular-testing-contract-tests",
+              "label": "Contract Testing (API)",
+              "prompt": "Design contract tests for {api} between producer/consumer with scenarios and versioning strategy.",
+              "tags": [
+                "angular",
+                "api",
+                "contract-testing",
+                "testing"
+              ]
+            },
+            {
+              "id": "angular-testing-e2e-plan",
+              "label": "E2E Test Plan",
+              "prompt": "Propose an end-to-end test plan for {feature} including journeys, test data strategy, and CI execution.",
+              "tags": [
+                "angular",
+                "e2e",
+                "testing"
+              ]
+            },
+            {
+              "id": "angular-testing-integration-tests",
+              "label": "Integration Test Template",
+              "prompt": "Create an integration test setup for {target} including seeding, teardown, and assertions for success + failure.",
+              "tags": [
+                "angular",
+                "integration-tests",
+                "testing"
+              ]
+            },
+            {
+              "id": "angular-testing-unit-tests-edge",
+              "label": "Unit Tests (Edge Cases)",
+              "prompt": "Write comprehensive unit tests for {target} focusing on edge cases, boundary values, and exception paths. Use Arrange/Act/Assert.",
+              "tags": [
+                "angular",
+                "edge-cases",
+                "testing",
+                "unit-tests"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React.js",
+      "type": "system",
+      "groups": [
+        {
+          "id": "architecture",
+          "label": "Architecture",
+          "prompts": [
+            {
+              "id": "react-architecture-boundaries",
+              "label": "Dependency Rule Enforcement",
+              "prompt": "Add tooling/lint rules to enforce dependency boundaries.",
+              "tags": [
+                "architecture",
+                "boundaries",
+                "lint",
+                "react"
+              ]
+            },
+            {
+              "id": "react-architecture-modularize",
+              "label": "Modularization Plan",
+              "prompt": "Break {system} into modules/services with seams.",
+              "tags": [
+                "architecture",
+                "modular-monolith",
+                "react"
+              ]
+            },
+            {
+              "id": "react-architecture-structure",
+              "label": "Project Structure & Boundaries",
+              "prompt": "Propose scalable project structure for {project} with boundaries and dependency rules.",
+              "tags": [
+                "architecture",
+                "project-structure",
+                "react"
+              ]
+            },
+            {
+              "id": "react-architecture-folder-structure",
+              "label": "React Architecture (Feature Folders)",
+              "prompt": "Design a scalable React project structure for {app} (feature folders, shared UI, hooks, services, routing). Include conventions for state management, API layer, and testing strategy.",
+              "tags": [
+                "react",
+                "architecture",
+                "project-structure",
+                "best-practices"
+              ]
+            },
+            {
+              "id": "react-architecture-usecase",
+              "label": "Use Case Template",
+              "prompt": "Create use case template for {feature} with ports/adapters.",
+              "tags": [
+                "architecture",
+                "clean-architecture",
+                "react"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "components",
+          "label": "Components",
+          "prompts": [
+            {
+              "id": "react-components-patterns",
+              "label": "Component Patterns",
+              "prompt": "Create a component for {feature} emphasizing a11y and testability.",
+              "tags": [
+                "a11y",
+                "components",
+                "react"
+              ]
+            },
+            {
+              "id": "react-components-i18n",
+              "label": "Internationalization (i18n)",
+              "prompt": "Add i18n support for {app} including locale files and formatting.",
+              "tags": [
+                "components",
+                "i18n",
+                "react"
+              ]
+            },
+            {
+              "id": "react-components-storybook",
+              "label": "Storybook Setup",
+              "prompt": "Set up Storybook for {app} and create stories for {component_name}.",
+              "tags": [
+                "components",
+                "react",
+                "storybook"
+              ]
+            },
+            {
+              "id": "react-ts-component",
+              "label": "TS Functional Component (Hooks + Memo)",
+              "prompt": "Create a TypeScript React functional component using useState/useEffect, memoized selectors with useMemo, and event handlers with useCallback.",
+              "tags": [
+                "react",
+                "typescript",
+                "hooks",
+                "memoization"
+              ]
+            },
+            {
+              "id": "react-components-theming",
+              "label": "Theming Strategy",
+              "prompt": "Implement theming (light/dark) for {app} using design tokens/CSS variables.",
+              "tags": [
+                "components",
+                "react",
+                "theming"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "design-system",
+          "label": "Design System",
+          "prompts": [
+            {
+              "id": "react-design-system-a11y",
+              "label": "A11y Standards for Components",
+              "prompt": "Create accessibility standards for design system components.",
+              "tags": [
+                "a11y",
+                "design-system",
+                "react"
+              ]
+            },
+            {
+              "id": "react-design-system-component-api",
+              "label": "Component API Guidelines",
+              "prompt": "Define component API guidelines (props/events/slots/children).",
+              "tags": [
+                "api",
+                "design-system",
+                "react"
+              ]
+            },
+            {
+              "id": "react-design-system-component",
+              "label": "Design System Component (A11y)",
+              "prompt": "Implement a reusable React component {component_name} for a design system using TypeScript. Include accessibility (ARIA), theming, composition patterns, and Storybook stories.",
+              "tags": [
+                "react",
+                "design-system",
+                "a11y",
+                "storybook",
+                "typescript"
+              ]
+            },
+            {
+              "id": "react-design-system-tokens",
+              "label": "Design Tokens",
+              "prompt": "Define design tokens for {product} and mapping to code.",
+              "tags": [
+                "design-system",
+                "react",
+                "tokens"
+              ]
+            },
+            {
+              "id": "react-design-system-docs",
+              "label": "Storybook Docs Template",
+              "prompt": "Create Storybook docs template for {component_name}.",
+              "tags": [
+                "design-system",
+                "react",
+                "storybook"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "forms",
+          "label": "Forms",
+          "prompts": [
+            {
+              "id": "react-custom-hook-form",
+              "label": "Custom Hook for Forms",
+              "prompt": "Write a custom hook to manage complex form state, validation rules, touched/dirty flags, async submit, error surfaces, and reset.",
+              "tags": [
+                "react",
+                "hooks",
+                "forms",
+                "validation"
+              ]
+            },
+            {
+              "id": "react-forms-dynamic",
+              "label": "Dynamic Form Builder",
+              "prompt": "Build a dynamic form builder for {schema} with conditional logic and server-driven validation.",
+              "tags": [
+                "dynamic-forms",
+                "forms",
+                "react"
+              ]
+            },
+            {
+              "id": "react-forms-wizard",
+              "label": "Multi-step Wizard Form",
+              "prompt": "Create multi-step wizard form for {flow} with step validation and persistence.",
+              "tags": [
+                "forms",
+                "react",
+                "wizard"
+              ]
+            },
+            {
+              "id": "react-forms-server-errors",
+              "label": "Server-side Error Mapping",
+              "prompt": "Map server-side validation errors to fields for {form_case}.",
+              "tags": [
+                "api",
+                "errors",
+                "forms",
+                "react"
+              ]
+            },
+            {
+              "id": "react-forms-validation",
+              "label": "Validation Rules & Error UX",
+              "prompt": "Create validation rules for {form_case} with accessible errors and submit flow.",
+              "tags": [
+                "a11y",
+                "forms",
+                "react",
+                "validation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "label": "Performance",
+          "prompts": [
+            {
+              "id": "react-performance-bundle",
+              "label": "Bundle/Startup Optimization",
+              "prompt": "Optimize startup/bundle size for {app} using code splitting, tree shaking, dependency audits.",
+              "tags": [
+                "optimization",
+                "performance",
+                "react"
+              ]
+            },
+            {
+              "id": "react-performance-virtualization",
+              "label": "List Virtualization",
+              "prompt": "Apply list virtualization for {list_view} and explain tradeoffs.",
+              "tags": [
+                "a11y",
+                "performance",
+                "react",
+                "virtualization"
+              ]
+            },
+            {
+              "id": "react-performance-optimizations",
+              "label": "Performance Optimizations",
+              "prompt": "Refactor a component to avoid unnecessary re-renders using memo, keying, stable props, virtualization for long lists, and profiling.",
+              "tags": [
+                "react",
+                "performance",
+                "optimization",
+                "memo"
+              ]
+            },
+            {
+              "id": "react-performance-profiling",
+              "label": "Profiling Steps",
+              "prompt": "Profile {app_or_view} and identify bottlenecks with step-by-step instructions.",
+              "tags": [
+                "performance",
+                "profiling",
+                "react"
+              ]
+            },
+            {
+              "id": "react-performance-render",
+              "label": "Render Optimization",
+              "prompt": "Refactor {component} to avoid unnecessary re-renders and optimize state updates.",
+              "tags": [
+                "optimization",
+                "performance",
+                "react"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "routing",
+          "label": "Routing",
+          "prompts": [
+            {
+              "id": "react-routing-deeplinks",
+              "label": "Deep Links & URL State",
+              "prompt": "Design deep linking for {feature} encoding filters/sort/pagination in URL.",
+              "tags": [
+                "react",
+                "routing",
+                "ux"
+              ]
+            },
+            {
+              "id": "react-routing-lazy",
+              "label": "Lazy Loading & Code Splitting",
+              "prompt": "Add lazy loading/code splitting for routes in {app}.",
+              "tags": [
+                "lazy-loading",
+                "performance",
+                "react",
+                "routing"
+              ]
+            },
+            {
+              "id": "react-routing-errors",
+              "label": "Not Found & Error Boundaries",
+              "prompt": "Add not-found route and error boundaries for {app} with logging.",
+              "tags": [
+                "errors",
+                "observability",
+                "react",
+                "routing"
+              ]
+            },
+            {
+              "id": "react-routing-protected",
+              "label": "Protected Routes",
+              "prompt": "Implement protected routes for {app} including auth checks, RBAC, and redirects.",
+              "tags": [
+                "react",
+                "routing",
+                "security"
+              ]
+            },
+            {
+              "id": "react-router-setup",
+              "label": "React Router Configuration",
+              "prompt": "Configure React Router with protected routes, lazy-loaded chunks, loader/actions (v6.4+), and a not-found boundary.",
+              "tags": [
+                "react",
+                "routing",
+                "react-router",
+                "code-splitting"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "state",
+          "label": "State & Data",
+          "prompts": [
+            {
+              "id": "react-state-async",
+              "label": "Async Data & Caching",
+              "prompt": "Implement async fetching for {resource} with caching, retries, optimistic updates.",
+              "tags": [
+                "caching",
+                "data-fetching",
+                "react",
+                "state",
+                "state-management"
+              ]
+            },
+            {
+              "id": "react-context-provider",
+              "label": "Context Provider + Reducer",
+              "prompt": "Create a Context provider with useReducer for global state, including typed actions, selectors, and performance-friendly context splitting.",
+              "tags": [
+                "react",
+                "context",
+                "state-management",
+                "reducer"
+              ]
+            },
+            {
+              "id": "react-query-data-fetch",
+              "label": "React Query Data Fetching",
+              "prompt": "Set up React Query for data fetching with query keys, caching, staleTime, optimistic updates, error retries, and devtools.",
+              "tags": [
+                "react",
+                "react-query",
+                "data-fetching",
+                "caching"
+              ]
+            },
+            {
+              "id": "react-redux-toolkit",
+              "label": "Redux Toolkit Slice",
+              "prompt": "Define a Redux Toolkit slice with createAsyncThunk for CRUD API calls, typed selectors, and error handling for rejected matches.",
+              "tags": [
+                "react",
+                "redux-toolkit",
+                "state-management",
+                "async"
+              ]
+            },
+            {
+              "id": "react-state-slice",
+              "label": "State Slice Design",
+              "prompt": "Design state slices for {feature} with normalized entities and selectors.",
+              "tags": [
+                "architecture",
+                "react",
+                "state",
+                "state-management"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "label": "Testing",
+          "prompts": [
+            {
+              "id": "react-testing-contract-tests",
+              "label": "Contract Testing (API)",
+              "prompt": "Design contract tests for {api} between producer/consumer with scenarios and versioning strategy.",
+              "tags": [
+                "api",
+                "contract-testing",
+                "react",
+                "testing"
+              ]
+            },
+            {
+              "id": "react-testing-e2e-plan",
+              "label": "E2E Test Plan",
+              "prompt": "Propose an end-to-end test plan for {feature} including journeys, test data strategy, and CI execution.",
+              "tags": [
+                "e2e",
+                "react",
+                "testing"
+              ]
+            },
+            {
+              "id": "react-testing-integration-tests",
+              "label": "Integration Test Template",
+              "prompt": "Create an integration test setup for {target} including seeding, teardown, and assertions for success + failure.",
+              "tags": [
+                "integration-tests",
+                "react",
+                "testing"
+              ]
+            },
+            {
+              "id": "react-rtl-jest",
+              "label": "RTL + Jest Tests",
+              "prompt": "Write React Testing Library tests for a component with user events, async assertions, and mocking API requests.",
+              "tags": [
+                "react",
+                "testing",
+                "jest",
+                "rtl"
+              ]
+            },
+            {
+              "id": "react-testing-unit-tests-edge",
+              "label": "Unit Tests (Edge Cases)",
+              "prompt": "Write comprehensive unit tests for {target} focusing on edge cases, boundary values, and exception paths. Use Arrange/Act/Assert.",
+              "tags": [
+                "edge-cases",
+                "react",
+                "testing",
+                "unit-tests"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+   {
+      "id": "architecture",
+      "label": "Architecture (Cross-cutting)",
+      "type": "system",
+      "groups": [
+        {
+          "id": "api",
+          "label": "API Design",
+          "prompts": [
+            {
+              "id": "arch-api-design-guidelines",
+              "label": "API Design Guidelines",
+              "prompt": "Define REST (or GraphQL) API guidelines for {product}: resource naming, pagination, filtering, error model (RFC7807), versioning, authn/authz, rate limiting, idempotency keys, and OpenAPI conventions. Provide examples.",
+              "tags": [
+                "architecture",
+                "api",
+                "rest",
+                "openapi",
+                "rfc7807"
+              ]
+            },
+            {
+              "id": "architecture-api-api-security",
+              "label": "API Security Checklist",
+              "prompt": "Create API security checklist for {service}.",
+              "tags": [
+                "api",
+                "architecture",
+                "security"
+              ]
+            },
+            {
+              "id": "architecture-api-openapi",
+              "label": "OpenAPI Specification Draft",
+              "prompt": "Draft OpenAPI spec for {service} including schemas and security.",
+              "tags": [
+                "api",
+                "architecture",
+                "openapi"
+              ]
+            },
+            {
+              "id": "architecture-api-errors",
+              "label": "Problem Details (RFC7807)",
+              "prompt": "Define RFC7807 error model for {service}.",
+              "tags": [
+                "api",
+                "architecture",
+                "errors",
+                "rfc7807"
+              ]
+            },
+            {
+              "id": "architecture-api-rest",
+              "label": "REST Guidelines",
+              "prompt": "Create REST guidelines for {product} with examples.",
+              "tags": [
+                "api",
+                "architecture",
+                "rest"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "blueprints",
+          "label": "Blueprints & Diagrams",
+          "prompts": [
+            {
+              "id": "arch-c4-model",
+              "label": "C4 Diagrams (Text-based)",
+              "prompt": "Create C4 model descriptions (Context, Container, Component) for {system}. Output in Mermaid or PlantUML text. Include boundaries, responsibilities, dependencies, and key user journeys.",
+              "tags": [
+                "architecture",
+                "c4",
+                "mermaid",
+                "plantuml",
+                "diagrams"
+              ]
+            },
+            {
+              "id": "architecture-blueprints-c4",
+              "label": "C4 Mermaid Diagrams",
+              "prompt": "Generate Mermaid C4 diagrams for {system}.",
+              "tags": [
+                "architecture",
+                "blueprints",
+                "c4",
+                "mermaid"
+              ]
+            },
+            {
+              "id": "architecture-blueprints-deployment",
+              "label": "Deployment Topology",
+              "prompt": "Design deployment topology for {system}.",
+              "tags": [
+                "architecture",
+                "blueprints",
+                "deployment"
+              ]
+            },
+            {
+              "id": "arch-nfr-checklist",
+              "label": "NFR Checklist & Tradeoffs",
+              "prompt": "For system {system}, create a non-functional requirements checklist (performance, scalability, security, availability, observability, maintainability, compliance). For each, propose measurable SLOs/SLIs, design choices, and tradeoffs.",
+              "tags": [
+                "architecture",
+                "nfr",
+                "slo",
+                "sli",
+                "tradeoffs"
+              ]
+            },
+            {
+              "id": "arch-solution-blueprint",
+              "label": "Solution Architecture Blueprint",
+              "prompt": "You are a principal software architect. Given the product idea: {idea}, constraints: {constraints}, and non-functional requirements: {nfrs}. Produce a solution blueprint covering: context diagram, container diagram, deployment view, data flow, key components, APIs/events, tech stack rationale, risks, and phased roadmap. Include assumptions and open questions.",
+              "tags": [
+                "architecture",
+                "blueprint",
+                "nfr",
+                "c4",
+                "roadmap"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "decision",
+          "label": "Decision Records (ADR)",
+          "prompts": [
+            {
+              "id": "architecture-decision-adr-data",
+              "label": "ADR (Data Storage)",
+              "prompt": "Write ADR comparing storage options for {workload}.",
+              "tags": [
+                "adr",
+                "architecture",
+                "data",
+                "decision"
+              ]
+            },
+            {
+              "id": "architecture-decision-adr-runtime",
+              "label": "ADR (Runtime/Framework)",
+              "prompt": "Write ADR choosing runtime/framework for {project}.",
+              "tags": [
+                "adr",
+                "architecture",
+                "decision",
+                "platform"
+              ]
+            },
+            {
+              "id": "architecture-decision-adr-security",
+              "label": "ADR (Security Control)",
+              "prompt": "Write an ADR for security control {control}.",
+              "tags": [
+                "adr",
+                "architecture",
+                "decision",
+                "security"
+              ]
+            },
+            {
+              "id": "architecture-decision-adr",
+              "label": "ADR (Standard)",
+              "prompt": "Write an ADR for {decision}.",
+              "tags": [
+                "adr",
+                "architecture",
+                "decision"
+              ]
+            },
+            {
+              "id": "arch-adr",
+              "label": "Architecture Decision Record (ADR)",
+              "prompt": "Write an ADR for decision: {decision}. Include context, problem statement, options considered, decision, consequences, risks, and how to validate/rollback. Keep it concise and actionable.",
+              "tags": [
+                "architecture",
+                "adr",
+                "decision",
+                "tradeoffs"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "distributed",
+          "label": "Distributed Patterns (CQRS/Eventing)",
+          "prompts": [
+            {
+              "id": "arch-cqrs-eventing",
+              "label": "CQRS + Event-driven Design",
+              "prompt": "Design a CQRS + event-driven architecture for {use_case}. Specify write models, read models, event schemas, idempotency strategy, ordering guarantees, saga/process manager approach, and failure handling (retries, DLQ).",
+              "tags": [
+                "architecture",
+                "cqrs",
+                "event-driven",
+                "saga",
+                "idempotency"
+              ]
+            },
+            {
+              "id": "architecture-distributed-idempotency",
+              "label": "Consumer Idempotency",
+              "prompt": "Implement idempotent consumer for {event} with dedup store and retries.",
+              "tags": [
+                "architecture",
+                "distributed",
+                "event-driven",
+                "idempotency"
+              ]
+            },
+            {
+              "id": "architecture-distributed-dlq",
+              "label": "Dead Letter Queue Handling",
+              "prompt": "Design DLQ workflow for {broker}.",
+              "tags": [
+                "architecture",
+                "distributed",
+                "dlq",
+                "event-driven",
+                "observability"
+              ]
+            },
+            {
+              "id": "architecture-distributed-schema",
+              "label": "Event Schema Template",
+              "prompt": "Create event schema template for {event} with versioning rules.",
+              "tags": [
+                "architecture",
+                "distributed",
+                "event-driven",
+                "schema"
+              ]
+            },
+            {
+              "id": "architecture-distributed-saga",
+              "label": "Saga/Process Manager",
+              "prompt": "Design saga for {workflow} with compensations and state.",
+              "tags": [
+                "architecture",
+                "distributed",
+                "event-driven",
+                "saga"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "domain",
+          "label": "Domain Modeling (DDD)",
+          "prompts": [
+            {
+              "id": "architecture-domain-aggregates",
+              "label": "Aggregates & Invariants",
+              "prompt": "Identify aggregates/invariants for {domain}.",
+              "tags": [
+                "aggregates",
+                "architecture",
+                "ddd",
+                "domain"
+              ]
+            },
+            {
+              "id": "architecture-domain-context-map",
+              "label": "Context Map",
+              "prompt": "Create context map for {domain}.",
+              "tags": [
+                "architecture",
+                "context-map",
+                "ddd",
+                "domain"
+              ]
+            },
+            {
+              "id": "arch-ddd-bounded-contexts",
+              "label": "DDD Bounded Contexts",
+              "prompt": "Using the domain description {domain}, identify bounded contexts, ubiquitous language, core entities/aggregates, commands/events, and context map relationships (upstream/downstream, ACL, partnership). Provide a table of contexts and responsibilities.",
+              "tags": [
+                "architecture",
+                "ddd",
+                "bounded-context",
+                "context-map",
+                "domain"
+              ]
+            },
+            {
+              "id": "architecture-domain-events",
+              "label": "Domain Events",
+              "prompt": "Define domain events for {domain}.",
+              "tags": [
+                "architecture",
+                "ddd",
+                "domain",
+                "events"
+              ]
+            },
+            {
+              "id": "architecture-domain-language",
+              "label": "Ubiquitous Language",
+              "prompt": "Build ubiquitous language glossary for {domain}.",
+              "tags": [
+                "architecture",
+                "ddd",
+                "domain"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "modernization",
+          "label": "Modernization & Migration",
+          "prompts": [
+            {
+              "id": "architecture-modernization-cutover",
+              "label": "Cutover Plan",
+              "prompt": "Create cutover plan for migration.",
+              "tags": [
+                "architecture",
+                "cutover",
+                "modernization"
+              ]
+            },
+            {
+              "id": "architecture-modernization-data-migration",
+              "label": "Data Migration Strategy",
+              "prompt": "Create data migration strategy for {legacy_db} to {new_db}.",
+              "tags": [
+                "architecture",
+                "data-migration",
+                "modernization"
+              ]
+            },
+            {
+              "id": "arch-refactor-strategy",
+              "label": "Legacy Modernization / Refactor Strategy",
+              "prompt": "Given legacy system {legacy}, propose modernization options (strangler fig, replatform, rewrite, modular monolith). Provide phased plan, risk mitigation, testing strategy, data migration approach, and success metrics.",
+              "tags": [
+                "architecture",
+                "modernization",
+                "refactor",
+                "migration",
+                "strangler"
+              ]
+            },
+            {
+              "id": "architecture-modernization-decomposition",
+              "label": "Service Decomposition",
+              "prompt": "Propose decomposition of {monolith}.",
+              "tags": [
+                "architecture",
+                "decomposition",
+                "modernization"
+              ]
+            },
+            {
+              "id": "architecture-modernization-strangler",
+              "label": "Strangler Fig Plan",
+              "prompt": "Create strangler fig plan for {legacy}.",
+              "tags": [
+                "architecture",
+                "migration",
+                "modernization",
+                "strangler"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "observability",
+          "label": "Observability",
+          "prompts": [
+            {
+              "id": "architecture-observability-dashboards",
+              "label": "Dashboards & Alerts",
+              "prompt": "Create dashboards and alerts for {service} using golden signals and SLO burn-rate.",
+              "tags": [
+                "alerts",
+                "architecture",
+                "dashboards",
+                "observability",
+                "slo"
+              ]
+            },
+            {
+              "id": "arch-observability",
+              "label": "Observability Plan",
+              "prompt": "Create an observability plan for {service}: logs (structured), metrics, traces (OpenTelemetry), correlation IDs, dashboards, alerts, and incident runbooks. Provide recommended KPIs and sampling strategy.",
+              "tags": [
+                "architecture",
+                "observability",
+                "otel",
+                "logging",
+                "metrics",
+                "tracing"
+              ]
+            },
+            {
+              "id": "architecture-observability-otel",
+              "label": "OpenTelemetry Instrumentation",
+              "prompt": "Instrument {service} with OpenTelemetry traces and metrics: spans, attributes, propagation, sampling.",
+              "tags": [
+                "architecture",
+                "metrics",
+                "observability",
+                "opentelemetry",
+                "tracing"
+              ]
+            },
+            {
+              "id": "architecture-observability-slos",
+              "label": "SLOs & Error Budgets",
+              "prompt": "Define SLOs/SLIs for {system} and error budget policy.",
+              "tags": [
+                "architecture",
+                "observability",
+                "sli",
+                "slo"
+              ]
+            },
+            {
+              "id": "architecture-observability-logging",
+              "label": "Structured Logging Standard",
+              "prompt": "Define structured logging for {service} including correlation IDs and redaction rules.",
+              "tags": [
+                "architecture",
+                "logging",
+                "observability"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "label": "Performance & Capacity",
+          "prompts": [
+            {
+              "id": "architecture-performance-bundle",
+              "label": "Bundle/Startup Optimization",
+              "prompt": "Optimize startup/bundle size for {app} using code splitting, tree shaking, dependency audits.",
+              "tags": [
+                "architecture",
+                "optimization",
+                "performance"
+              ]
+            },
+            {
+              "id": "architecture-performance-virtualization",
+              "label": "List Virtualization",
+              "prompt": "Apply list virtualization for {list_view} and explain tradeoffs.",
+              "tags": [
+                "a11y",
+                "architecture",
+                "performance",
+                "virtualization"
+              ]
+            },
+            {
+              "id": "arch-performance-capacity",
+              "label": "Performance & Capacity Plan",
+              "prompt": "Given expected traffic {traffic}, data volume {data_volume}, and latency targets {latency}. Propose performance strategy: caching, async processing, DB indexing/partitioning, load testing approach, capacity estimation, and bottleneck analysis.",
+              "tags": [
+                "architecture",
+                "performance",
+                "capacity",
+                "caching",
+                "load-testing"
+              ]
+            },
+            {
+              "id": "architecture-performance-profiling",
+              "label": "Profiling Steps",
+              "prompt": "Profile {app_or_view} and identify bottlenecks with step-by-step instructions.",
+              "tags": [
+                "architecture",
+                "performance",
+                "profiling"
+              ]
+            },
+            {
+              "id": "architecture-performance-render",
+              "label": "Render Optimization",
+              "prompt": "Refactor {component} to avoid unnecessary re-renders and optimize state updates.",
+              "tags": [
+                "architecture",
+                "optimization",
+                "performance"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "label": "Security",
+          "prompts": [
+            {
+              "id": "architecture-security-authz-policy",
+              "label": "Authorization Policy Design",
+              "prompt": "Design authorization policies for {app} (roles/claims/ABAC), least privilege, and tests.",
+              "tags": [
+                "architecture",
+                "authorization",
+                "security"
+              ]
+            },
+            {
+              "id": "architecture-security-validation",
+              "label": "Input Validation & Sanitization",
+              "prompt": "Harden input handling for {endpoint} including SSRF/path traversal defenses.",
+              "tags": [
+                "architecture",
+                "security",
+                "validation"
+              ]
+            },
+            {
+              "id": "architecture-security-oauth",
+              "label": "OAuth2/OIDC Flow Selection",
+              "prompt": "Choose OAuth2/OIDC flow for {client_type} with PKCE and refresh strategy.",
+              "tags": [
+                "architecture",
+                "oauth2",
+                "oidc",
+                "security"
+              ]
+            },
+            {
+              "id": "architecture-security-secrets",
+              "label": "Secrets Management",
+              "prompt": "Propose secrets management for {system} including rotation and least privilege.",
+              "tags": [
+                "architecture",
+                "secrets",
+                "security"
+              ]
+            },
+            {
+              "id": "arch-security-threat-model",
+              "label": "Threat Modeling (STRIDE)",
+              "prompt": "Perform a STRIDE threat model for {system} with trust boundaries {boundaries}. List threats, likelihood/impact, mitigations, and security controls. Include authn/authz, secrets, data protection, and audit logging.",
+              "tags": [
+                "architecture",
+                "security",
+                "threat-model",
+                "stride",
+                "controls"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "type": "system",
+      "groups": [
+        {
+          "id": "api",
+          "label": "API",
+          "prompts": [
+            {
+              "id": "python-api-api-security",
+              "label": "API Security Checklist",
+              "prompt": "Create API security checklist for {service}.",
+              "tags": [
+                "api",
+                "python",
+                "security"
+              ]
+            },
+            {
+              "id": "python-fastapi-endpoint",
+              "label": "FastAPI Endpoint (Pydantic + OpenAPI)",
+              "prompt": "Implement a FastAPI endpoint for {resource} with Pydantic schemas, validation, dependency injection, proper status codes, error handlers, and OpenAPI tags. Include async support and example requests/responses.",
+              "tags": [
+                "python",
+                "fastapi",
+                "pydantic",
+                "openapi",
+                "validation"
+              ]
+            },
+            {
+              "id": "python-api-openapi",
+              "label": "OpenAPI Specification Draft",
+              "prompt": "Draft OpenAPI spec for {service} including schemas and security.",
+              "tags": [
+                "api",
+                "openapi",
+                "python"
+              ]
+            },
+            {
+              "id": "python-api-errors",
+              "label": "Problem Details (RFC7807)",
+              "prompt": "Define RFC7807 error model for {service}.",
+              "tags": [
+                "api",
+                "errors",
+                "python",
+                "rfc7807"
+              ]
+            },
+            {
+              "id": "python-api-rest",
+              "label": "REST Guidelines",
+              "prompt": "Create REST guidelines for {product} with examples.",
+              "tags": [
+                "api",
+                "python",
+                "rest"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "architecture",
+          "label": "Architecture",
+          "prompts": [
+            {
+              "id": "python-clean-architecture",
+              "label": "Clean Architecture Skeleton",
+              "prompt": "Generate a Python project skeleton following Clean Architecture for {project}. Include layers (domain, application, infrastructure, interfaces), dependency rules, example use case, and wiring. Provide folder structure and minimal code stubs.",
+              "tags": [
+                "python",
+                "clean-architecture",
+                "ddd",
+                "project-structure"
+              ]
+            },
+            {
+              "id": "python-architecture-boundaries",
+              "label": "Dependency Rule Enforcement",
+              "prompt": "Add tooling/lint rules to enforce dependency boundaries.",
+              "tags": [
+                "architecture",
+                "boundaries",
+                "lint",
+                "python"
+              ]
+            },
+            {
+              "id": "python-architecture-modularize",
+              "label": "Modularization Plan",
+              "prompt": "Break {system} into modules/services with seams.",
+              "tags": [
+                "architecture",
+                "modular-monolith",
+                "python"
+              ]
+            },
+            {
+              "id": "python-architecture-structure",
+              "label": "Project Structure & Boundaries",
+              "prompt": "Propose scalable project structure for {project} with boundaries and dependency rules.",
+              "tags": [
+                "architecture",
+                "project-structure",
+                "python"
+              ]
+            },
+            {
+              "id": "python-architecture-usecase",
+              "label": "Use Case Template",
+              "prompt": "Create use case template for {feature} with ports/adapters.",
+              "tags": [
+                "architecture",
+                "clean-architecture",
+                "python"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "data-engineering",
+          "label": "Data Engineering",
+          "prompts": [
+            {
+              "id": "python-data-pipeline",
+              "label": "Data Pipeline (Pandas)",
+              "prompt": "Build a robust data pipeline for {dataset_description} using pandas. Include schema validation, missing data handling, incremental processing, logging, and export to {target_format}. Provide complexity notes.",
+              "tags": [
+                "python",
+                "pandas",
+                "data-pipeline",
+                "validation",
+                "etl"
+              ]
+            },
+            {
+              "id": "python-data-engineering-quality",
+              "label": "Data Quality Checks",
+              "prompt": "Add data quality checks for {dataset}.",
+              "tags": [
+                "data-engineering",
+                "python",
+                "quality"
+              ]
+            },
+            {
+              "id": "python-data-engineering-incremental",
+              "label": "Incremental Processing",
+              "prompt": "Design incremental processing for {dataset}.",
+              "tags": [
+                "data-engineering",
+                "incremental",
+                "python"
+              ]
+            },
+            {
+              "id": "python-data-engineering-orchestration",
+              "label": "Orchestration",
+              "prompt": "Orchestrate pipeline {pipeline}.",
+              "tags": [
+                "data-engineering",
+                "orchestration",
+                "python"
+              ]
+            },
+            {
+              "id": "python-data-engineering-schema",
+              "label": "Schema Validation",
+              "prompt": "Validate dataset schema for {dataset} including drift detection.",
+              "tags": [
+                "data-engineering",
+                "python",
+                "validation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "observability",
+          "label": "Observability",
+          "prompts": [
+            {
+              "id": "python-async-queue-worker",
+              "label": "Async Worker (Celery/RQ/AsyncIO)",
+              "prompt": "Design and implement a background worker for {job_type} using {queue_lib} (Celery/RQ/asyncio). Include retry/backoff, idempotency, observability, graceful shutdown, and DLQ strategy.",
+              "tags": [
+                "python",
+                "worker",
+                "queue",
+                "resilience",
+                "observability"
+              ]
+            },
+            {
+              "id": "python-observability-dashboards",
+              "label": "Dashboards & Alerts",
+              "prompt": "Create dashboards and alerts for {service} using golden signals and SLO burn-rate.",
+              "tags": [
+                "alerts",
+                "dashboards",
+                "observability",
+                "python",
+                "slo"
+              ]
+            },
+            {
+              "id": "python-observability-otel",
+              "label": "OpenTelemetry Instrumentation",
+              "prompt": "Instrument {service} with OpenTelemetry traces and metrics: spans, attributes, propagation, sampling.",
+              "tags": [
+                "metrics",
+                "observability",
+                "opentelemetry",
+                "python",
+                "tracing"
+              ]
+            },
+            {
+              "id": "python-logging-otel",
+              "label": "Structured Logging + OpenTelemetry",
+              "prompt": "Add structured logging and OpenTelemetry tracing to a Python service {service}. Include correlation IDs, trace propagation, log enrichment, and a sample configuration.",
+              "tags": [
+                "python",
+                "logging",
+                "opentelemetry",
+                "tracing",
+                "observability"
+              ]
+            },
+            {
+              "id": "python-observability-logging",
+              "label": "Structured Logging Standard",
+              "prompt": "Define structured logging for {service} including correlation IDs and redaction rules.",
+              "tags": [
+                "logging",
+                "observability",
+                "python"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "label": "Testing",
+          "prompts": [
+            {
+              "id": "python-cli-tool",
+              "label": "CLI Tool (Typer/Argparse)",
+              "prompt": "Create a Python CLI for {task} using {cli_lib} (Typer/Click/argparse). Include subcommands, config file support, rich help output, and tests.",
+              "tags": [
+                "python",
+                "cli",
+                "typer",
+                "click",
+                "argparse",
+                "testing"
+              ]
+            },
+            {
+              "id": "python-testing-integration-tests",
+              "label": "Integration Test Template",
+              "prompt": "Create an integration test setup for {target} including seeding, teardown, and assertions for success + failure.",
+              "tags": [
+                "integration-tests",
+                "python",
+                "testing"
+              ]
+            },
+            {
+              "id": "python-sqlalchemy-repo",
+              "label": "SQLAlchemy Repository Pattern",
+              "prompt": "Create a SQLAlchemy (2.0) data access layer for {entity} with repository methods (CRUD, paging, filtering). Use sessions safely, include transactions, and show unit tests with a temporary DB.",
+              "tags": [
+                "python",
+                "sqlalchemy",
+                "repository",
+                "database",
+                "testing"
+              ]
+            },
+            {
+              "id": "python-testing-unit-tests-edge",
+              "label": "Unit Tests (Edge Cases)",
+              "prompt": "Write comprehensive unit tests for {target} focusing on edge cases, boundary values, and exception paths. Use Arrange/Act/Assert.",
+              "tags": [
+                "edge-cases",
+                "python",
+                "testing",
+                "unit-tests"
+              ]
+            },
+            {
+              "id": "python-pytest-mocking",
+              "label": "pytest Unit Tests (Mocking)",
+              "prompt": "Write pytest tests for {module_or_function}. Cover edge cases, parameterized tests, fixtures, mocking external calls, and asserting exceptions.",
+              "tags": [
+                "python",
+                "pytest",
+                "testing",
+                "mocking",
+                "unit-tests"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nodejs",
+      "label": "Node.js",
+      "type": "system",
+      "groups": [
+        {
+          "id": "architecture",
+          "label": "Architecture",
+          "prompts": [
+            {
+              "id": "node-clean-architecture",
+              "label": "Clean Architecture Skeleton",
+              "prompt": "Generate a Node.js/TypeScript project skeleton for {project} following Clean Architecture (domain, application, infrastructure, interfaces). Include dependency inversion, example use case, and wiring for {framework}.",
+              "tags": [
+                "nodejs",
+                "typescript",
+                "clean-architecture",
+                "project-structure"
+              ]
+            },
+            {
+              "id": "nodejs-architecture-boundaries",
+              "label": "Dependency Rule Enforcement",
+              "prompt": "Add tooling/lint rules to enforce dependency boundaries.",
+              "tags": [
+                "architecture",
+                "boundaries",
+                "lint",
+                "nodejs"
+              ]
+            },
+            {
+              "id": "nodejs-architecture-modularize",
+              "label": "Modularization Plan",
+              "prompt": "Break {system} into modules/services with seams.",
+              "tags": [
+                "architecture",
+                "modular-monolith",
+                "nodejs"
+              ]
+            },
+            {
+              "id": "nodejs-architecture-structure",
+              "label": "Project Structure & Boundaries",
+              "prompt": "Propose scalable project structure for {project} with boundaries and dependency rules.",
+              "tags": [
+                "architecture",
+                "nodejs",
+                "project-structure"
+              ]
+            },
+            {
+              "id": "nodejs-architecture-usecase",
+              "label": "Use Case Template",
+              "prompt": "Create use case template for {feature} with ports/adapters.",
+              "tags": [
+                "architecture",
+                "clean-architecture",
+                "nodejs"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "data",
+          "label": "Data Access",
+          "prompts": [
+            {
+              "id": "nodejs-data-migrations",
+              "label": "Database Migrations",
+              "prompt": "Create migration strategy for {schema_change} including zero-downtime rollout.",
+              "tags": [
+                "data",
+                "database",
+                "migrations",
+                "nodejs"
+              ]
+            },
+            {
+              "id": "nodejs-data-indexing",
+              "label": "Indexing & Query Optimization",
+              "prompt": "Analyze queries for {entity} and propose indexes and pagination.",
+              "tags": [
+                "data",
+                "database",
+                "indexing",
+                "nodejs",
+                "performance"
+              ]
+            },
+            {
+              "id": "node-prisma-repo",
+              "label": "Prisma Data Layer",
+              "prompt": "Design a Prisma data access layer for {entity} with CRUD, pagination, filtering, transactions, and a repository abstraction. Include migration strategy.",
+              "tags": [
+                "nodejs",
+                "prisma",
+                "database",
+                "repository",
+                "migrations"
+              ]
+            },
+            {
+              "id": "nodejs-data-soft-delete",
+              "label": "Soft Delete & Auditing",
+              "prompt": "Add soft delete and auditing metadata for {entity}.",
+              "tags": [
+                "auditing",
+                "data",
+                "database",
+                "nodejs",
+                "soft-delete"
+              ]
+            },
+            {
+              "id": "nodejs-data-transactions",
+              "label": "Transactions & Consistency",
+              "prompt": "Implement transactional behavior for {use_case} and explain isolation levels.",
+              "tags": [
+                "consistency",
+                "data",
+                "database",
+                "nodejs",
+                "transactions"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eventing",
+          "label": "Eventing",
+          "prompts": [
+            {
+              "id": "nodejs-eventing-consumer",
+              "label": "Consumer Implementation",
+              "prompt": "Implement consumer for {event} with idempotency, retries, and DLQ.",
+              "tags": [
+                "consumer",
+                "event-driven",
+                "eventing",
+                "nodejs"
+              ]
+            },
+            {
+              "id": "nodejs-eventing-schema",
+              "label": "Event Schema & Versioning",
+              "prompt": "Define event schema and versioning for {event}.",
+              "tags": [
+                "eventing",
+                "nodejs",
+                "schema",
+                "versioning"
+              ]
+            },
+            {
+              "id": "node-event-driven",
+              "label": "Event-driven Consumer/Producer",
+              "prompt": "Create a producer and consumer for {event_name} using {broker} (Kafka/RabbitMQ/SQS). Define event schema, idempotency, retries/backoff, DLQ, and observability.",
+              "tags": [
+                "nodejs",
+                "event-driven",
+                "kafka",
+                "rabbitmq",
+                "sqs",
+                "resilience"
+              ]
+            },
+            {
+              "id": "nodejs-eventing-observability",
+              "label": "Eventing Observability",
+              "prompt": "Add metrics/traces for event processing.",
+              "tags": [
+                "eventing",
+                "nodejs",
+                "observability"
+              ]
+            },
+            {
+              "id": "nodejs-eventing-producer",
+              "label": "Producer Implementation",
+              "prompt": "Implement event producer for {event} with schema validation and retries.",
+              "tags": [
+                "event-driven",
+                "eventing",
+                "nodejs",
+                "producer"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "express",
+          "label": "Express",
+          "prompts": [
+            {
+              "id": "node-express-api",
+              "label": "Express API Endpoint (Validation + Errors)",
+              "prompt": "Implement an Express.js endpoint for {route} with request validation (Zod/Joi), async error handling middleware, proper status codes, and OpenAPI documentation. Include examples and tests.",
+              "tags": [
+                "nodejs",
+                "express",
+                "api",
+                "validation",
+                "openapi"
+              ]
+            },
+            {
+              "id": "nodejs-express-middleware",
+              "label": "Middleware Stack",
+              "prompt": "Design Express middleware stack for {app}.",
+              "tags": [
+                "express",
+                "middleware",
+                "nodejs"
+              ]
+            },
+            {
+              "id": "nodejs-express-router",
+              "label": "Router Structure",
+              "prompt": "Propose Express router structure for {app}.",
+              "tags": [
+                "architecture",
+                "express",
+                "nodejs"
+              ]
+            },
+            {
+              "id": "nodejs-express-security",
+              "label": "Security with Helmet/CORS",
+              "prompt": "Configure Helmet and CORS for {app}.",
+              "tags": [
+                "cors",
+                "express",
+                "nodejs",
+                "security"
+              ]
+            },
+            {
+              "id": "nodejs-express-validation",
+              "label": "Validation with Zod",
+              "prompt": "Implement validation for {route} using Zod.",
+              "tags": [
+                "express",
+                "nodejs",
+                "validation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "label": "Performance",
+          "prompts": [
+            {
+              "id": "nodejs-performance-bundle",
+              "label": "Bundle/Startup Optimization",
+              "prompt": "Optimize startup/bundle size for {app} using code splitting, tree shaking, dependency audits.",
+              "tags": [
+                "nodejs",
+                "optimization",
+                "performance"
+              ]
+            },
+            {
+              "id": "nodejs-performance-virtualization",
+              "label": "List Virtualization",
+              "prompt": "Apply list virtualization for {list_view} and explain tradeoffs.",
+              "tags": [
+                "a11y",
+                "nodejs",
+                "performance",
+                "virtualization"
+              ]
+            },
+            {
+              "id": "node-performance",
+              "label": "Performance & Profiling",
+              "prompt": "Analyze and optimize Node.js performance for {scenario}. Provide steps using clinic/0x or built-in profiler, identify bottlenecks, and propose code-level and architecture-level improvements.",
+              "tags": [
+                "nodejs",
+                "performance",
+                "profiling",
+                "optimization"
+              ]
+            },
+            {
+              "id": "nodejs-performance-profiling",
+              "label": "Profiling Steps",
+              "prompt": "Profile {app_or_view} and identify bottlenecks with step-by-step instructions.",
+              "tags": [
+                "nodejs",
+                "performance",
+                "profiling"
+              ]
+            },
+            {
+              "id": "nodejs-performance-render",
+              "label": "Render Optimization",
+              "prompt": "Refactor {component} to avoid unnecessary re-renders and optimize state updates.",
+              "tags": [
+                "nodejs",
+                "optimization",
+                "performance"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "label": "Security",
+          "prompts": [
+            {
+              "id": "nodejs-security-authz-policy",
+              "label": "Authorization Policy Design",
+              "prompt": "Design authorization policies for {app} (roles/claims/ABAC), least privilege, and tests.",
+              "tags": [
+                "authorization",
+                "nodejs",
+                "security"
+              ]
+            },
+            {
+              "id": "nodejs-security-validation",
+              "label": "Input Validation & Sanitization",
+              "prompt": "Harden input handling for {endpoint} including SSRF/path traversal defenses.",
+              "tags": [
+                "nodejs",
+                "security",
+                "validation"
+              ]
+            },
+            {
+              "id": "node-auth-jwt",
+              "label": "JWT Auth + RBAC",
+              "prompt": "Implement JWT authentication and role-based authorization for {app} in Node.js ({framework}). Include token refresh strategy, secure cookie vs header choice, and 401/403 handling.",
+              "tags": [
+                "nodejs",
+                "security",
+                "jwt",
+                "rbac",
+                "authentication"
+              ]
+            },
+            {
+              "id": "nodejs-security-oauth",
+              "label": "OAuth2/OIDC Flow Selection",
+              "prompt": "Choose OAuth2/OIDC flow for {client_type} with PKCE and refresh strategy.",
+              "tags": [
+                "nodejs",
+                "oauth2",
+                "oidc",
+                "security"
+              ]
+            },
+            {
+              "id": "nodejs-security-secrets",
+              "label": "Secrets Management",
+              "prompt": "Propose secrets management for {system} including rotation and least privilege.",
+              "tags": [
+                "nodejs",
+                "secrets",
+                "security"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "label": "Testing",
+          "prompts": [
+            {
+              "id": "nodejs-testing-contract-tests",
+              "label": "Contract Testing (API)",
+              "prompt": "Design contract tests for {api} between producer/consumer with scenarios and versioning strategy.",
+              "tags": [
+                "api",
+                "contract-testing",
+                "nodejs",
+                "testing"
+              ]
+            },
+            {
+              "id": "nodejs-testing-integration-tests",
+              "label": "Integration Test Template",
+              "prompt": "Create an integration test setup for {target} including seeding, teardown, and assertions for success + failure.",
+              "tags": [
+                "integration-tests",
+                "nodejs",
+                "testing"
+              ]
+            },
+            {
+              "id": "node-testing-jest",
+              "label": "Jest Tests (Unit + Integration)",
+              "prompt": "Write Jest tests for {component}. Include mocking, fake timers if needed, integration test setup (supertest), and coverage of edge cases.",
+              "tags": [
+                "nodejs",
+                "testing",
+                "jest",
+                "supertest",
+                "unit-tests"
+              ]
+            },
+            {
+              "id": "node-nestjs-module",
+              "label": "NestJS Module (Controller/Service/DTO)",
+              "prompt": "Create a NestJS feature module for {feature}. Include controller, service, DTO validation (class-validator), exception filters, and integration tests.",
+              "tags": [
+                "nodejs",
+                "nestjs",
+                "dto",
+                "validation",
+                "testing"
+              ]
+            },
+            {
+              "id": "nodejs-testing-unit-tests-edge",
+              "label": "Unit Tests (Edge Cases)",
+              "prompt": "Write comprehensive unit tests for {target} focusing on edge cases, boundary values, and exception paths. Use Arrange/Act/Assert.",
+              "tags": [
+                "edge-cases",
+                "nodejs",
+                "testing",
+                "unit-tests"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vue",
+      "label": "Vue.js",
+      "type": "system",
+      "groups": [
+        {
+          "id": "components",
+          "label": "Components",
+          "prompts": [
+            {
+              "id": "vue-components-patterns",
+              "label": "Component Patterns",
+              "prompt": "Create a component for {feature} emphasizing a11y and testability.",
+              "tags": [
+                "a11y",
+                "components",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-components-i18n",
+              "label": "Internationalization (i18n)",
+              "prompt": "Add i18n support for {app} including locale files and formatting.",
+              "tags": [
+                "components",
+                "i18n",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-sfc-composition",
+              "label": "SFC (Composition API + TypeScript)",
+              "prompt": "Create a Vue 3 Single File Component using Composition API + TypeScript for {feature}. Include props/emits typing, accessibility, and reactive state with computed/watch.",
+              "tags": [
+                "vue",
+                "vue3",
+                "composition-api",
+                "typescript",
+                "components"
+              ]
+            },
+            {
+              "id": "vue-components-storybook",
+              "label": "Storybook Setup",
+              "prompt": "Set up Storybook for {app} and create stories for {component_name}.",
+              "tags": [
+                "components",
+                "storybook",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-components-theming",
+              "label": "Theming Strategy",
+              "prompt": "Implement theming (light/dark) for {app} using design tokens/CSS variables.",
+              "tags": [
+                "components",
+                "theming",
+                "vue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "data",
+          "label": "Data & API",
+          "prompts": [
+            {
+              "id": "vue-api-service",
+              "label": "API Service Layer (Axios/Fetch)",
+              "prompt": "Create an API service layer in Vue for {api}. Include Axios/fetch wrapper, interceptors (auth, errors), typed responses, and retry/backoff.",
+              "tags": [
+                "vue",
+                "api",
+                "axios",
+                "interceptors",
+                "typescript"
+              ]
+            },
+            {
+              "id": "vue-data-migrations",
+              "label": "Database Migrations",
+              "prompt": "Create migration strategy for {schema_change} including zero-downtime rollout.",
+              "tags": [
+                "data",
+                "database",
+                "migrations",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-data-indexing",
+              "label": "Indexing & Query Optimization",
+              "prompt": "Analyze queries for {entity} and propose indexes and pagination.",
+              "tags": [
+                "data",
+                "database",
+                "indexing",
+                "performance",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-data-soft-delete",
+              "label": "Soft Delete & Auditing",
+              "prompt": "Add soft delete and auditing metadata for {entity}.",
+              "tags": [
+                "auditing",
+                "data",
+                "database",
+                "soft-delete",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-data-transactions",
+              "label": "Transactions & Consistency",
+              "prompt": "Implement transactional behavior for {use_case} and explain isolation levels.",
+              "tags": [
+                "consistency",
+                "data",
+                "database",
+                "transactions",
+                "vue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "design-system",
+          "label": "Design System",
+          "prompts": [
+            {
+              "id": "vue-design-system-a11y",
+              "label": "A11y Standards for Components",
+              "prompt": "Create accessibility standards for design system components.",
+              "tags": [
+                "a11y",
+                "design-system",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-design-system-component-api",
+              "label": "Component API Guidelines",
+              "prompt": "Define component API guidelines (props/events/slots/children).",
+              "tags": [
+                "api",
+                "design-system",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-design-system",
+              "label": "Design System Component",
+              "prompt": "Design a reusable UI component {component_name} for a Vue design system. Include props API, slots, theming, accessibility, and storybook usage.",
+              "tags": [
+                "vue",
+                "design-system",
+                "components",
+                "a11y",
+                "storybook"
+              ]
+            },
+            {
+              "id": "vue-design-system-tokens",
+              "label": "Design Tokens",
+              "prompt": "Define design tokens for {product} and mapping to code.",
+              "tags": [
+                "design-system",
+                "tokens",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-design-system-docs",
+              "label": "Storybook Docs Template",
+              "prompt": "Create Storybook docs template for {component_name}.",
+              "tags": [
+                "design-system",
+                "storybook",
+                "vue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "forms",
+          "label": "Forms",
+          "prompts": [
+            {
+              "id": "vue-forms-dynamic",
+              "label": "Dynamic Form Builder",
+              "prompt": "Build a dynamic form builder for {schema} with conditional logic and server-driven validation.",
+              "tags": [
+                "dynamic-forms",
+                "forms",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-forms-validation",
+              "label": "Forms + Validation",
+              "prompt": "Build a form in Vue 3 for {form_case} with validation (VeeValidate/Zod), async submit, error messages, and reset/touched state.",
+              "tags": [
+                "vue",
+                "forms",
+                "validation",
+                "vee-validate",
+                "zod"
+              ]
+            },
+            {
+              "id": "vue-forms-wizard",
+              "label": "Multi-step Wizard Form",
+              "prompt": "Create multi-step wizard form for {flow} with step validation and persistence.",
+              "tags": [
+                "forms",
+                "vue",
+                "wizard"
+              ]
+            },
+            {
+              "id": "vue-forms-server-errors",
+              "label": "Server-side Error Mapping",
+              "prompt": "Map server-side validation errors to fields for {form_case}.",
+              "tags": [
+                "api",
+                "errors",
+                "forms",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-forms-validation-7447",
+              "label": "Validation Rules & Error UX",
+              "prompt": "Create validation rules for {form_case} with accessible errors and submit flow.",
+              "tags": [
+                "a11y",
+                "forms",
+                "validation",
+                "vue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "label": "Performance",
+          "prompts": [
+            {
+              "id": "vue-performance-bundle",
+              "label": "Bundle/Startup Optimization",
+              "prompt": "Optimize startup/bundle size for {app} using code splitting, tree shaking, dependency audits.",
+              "tags": [
+                "optimization",
+                "performance",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-performance-virtualization",
+              "label": "List Virtualization",
+              "prompt": "Apply list virtualization for {list_view} and explain tradeoffs.",
+              "tags": [
+                "a11y",
+                "performance",
+                "virtualization",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-performance",
+              "label": "Performance Optimization",
+              "prompt": "Optimize a Vue 3 view rendering {list_or_view}. Apply computed caching, v-memo, virtualization, and code-splitting. Provide profiling steps.",
+              "tags": [
+                "vue",
+                "performance",
+                "optimization",
+                "virtualization"
+              ]
+            },
+            {
+              "id": "vue-performance-profiling",
+              "label": "Profiling Steps",
+              "prompt": "Profile {app_or_view} and identify bottlenecks with step-by-step instructions.",
+              "tags": [
+                "performance",
+                "profiling",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-performance-render",
+              "label": "Render Optimization",
+              "prompt": "Refactor {component} to avoid unnecessary re-renders and optimize state updates.",
+              "tags": [
+                "optimization",
+                "performance",
+                "vue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "routing",
+          "label": "Routing",
+          "prompts": [
+            {
+              "id": "vue-routing-deeplinks",
+              "label": "Deep Links & URL State",
+              "prompt": "Design deep linking for {feature} encoding filters/sort/pagination in URL.",
+              "tags": [
+                "routing",
+                "ux",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-routing-lazy",
+              "label": "Lazy Loading & Code Splitting",
+              "prompt": "Add lazy loading/code splitting for routes in {app}.",
+              "tags": [
+                "lazy-loading",
+                "performance",
+                "routing",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-routing-errors",
+              "label": "Not Found & Error Boundaries",
+              "prompt": "Add not-found route and error boundaries for {app} with logging.",
+              "tags": [
+                "errors",
+                "observability",
+                "routing",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-routing-protected",
+              "label": "Protected Routes",
+              "prompt": "Implement protected routes for {app} including auth checks, RBAC, and redirects.",
+              "tags": [
+                "routing",
+                "security",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-router-guards",
+              "label": "Vue Router (Guards + Lazy Loading)",
+              "prompt": "Configure Vue Router for {app} with lazy-loaded routes, auth guards, role checks, and a not-found route. Include code-splitting strategy.",
+              "tags": [
+                "vue",
+                "router",
+                "guards",
+                "lazy-loading",
+                "security"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "state",
+          "label": "State Management",
+          "prompts": [
+            {
+              "id": "vue-state-async",
+              "label": "Async Data & Caching",
+              "prompt": "Implement async fetching for {resource} with caching, retries, optimistic updates.",
+              "tags": [
+                "caching",
+                "data-fetching",
+                "state",
+                "state-management",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-pinia-store",
+              "label": "Pinia Store (Async + Caching)",
+              "prompt": "Implement a Pinia store for {entity} with async actions, caching, error handling, and typed getters. Show how components consume the store.",
+              "tags": [
+                "vue",
+                "pinia",
+                "state-management",
+                "async",
+                "caching"
+              ]
+            },
+            {
+              "id": "vue-state-effects",
+              "label": "Side Effects Handling",
+              "prompt": "Handle side effects for {feature} with cancellation/debounce and error recovery.",
+              "tags": [
+                "effects",
+                "state",
+                "state-management",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-state-persist",
+              "label": "State Persistence",
+              "prompt": "Persist state for {app} with versioning and hydration strategy.",
+              "tags": [
+                "persistence",
+                "state",
+                "state-management",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-state-slice",
+              "label": "State Slice Design",
+              "prompt": "Design state slices for {feature} with normalized entities and selectors.",
+              "tags": [
+                "architecture",
+                "state",
+                "state-management",
+                "vue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "label": "Testing",
+          "prompts": [
+            {
+              "id": "vue-testing-contract-tests",
+              "label": "Contract Testing (API)",
+              "prompt": "Design contract tests for {api} between producer/consumer with scenarios and versioning strategy.",
+              "tags": [
+                "api",
+                "contract-testing",
+                "testing",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-testing-e2e-plan",
+              "label": "E2E Test Plan",
+              "prompt": "Propose an end-to-end test plan for {feature} including journeys, test data strategy, and CI execution.",
+              "tags": [
+                "e2e",
+                "testing",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-testing-integration-tests",
+              "label": "Integration Test Template",
+              "prompt": "Create an integration test setup for {target} including seeding, teardown, and assertions for success + failure.",
+              "tags": [
+                "integration-tests",
+                "testing",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-testing-unit-tests-edge",
+              "label": "Unit Tests (Edge Cases)",
+              "prompt": "Write comprehensive unit tests for {target} focusing on edge cases, boundary values, and exception paths. Use Arrange/Act/Assert.",
+              "tags": [
+                "edge-cases",
+                "testing",
+                "unit-tests",
+                "vue"
+              ]
+            },
+            {
+              "id": "vue-unit-test",
+              "label": "Unit Tests (Vitest + Vue Test Utils)",
+              "prompt": "Write unit tests for Vue component {component} using Vitest and Vue Test Utils. Include DOM interaction, mocking composables/stores, and async assertions.",
+              "tags": [
+                "vue",
+                "testing",
+                "vitest",
+                "vue-test-utils",
+                "unit-tests"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blazor",
+      "label": "Blazor",
+      "type": "system",
+      "groups": [
+        {
+          "id": "components",
+          "label": "Components & UI",
+          "prompts": [
+            {
+              "id": "blazor-components-razor-component",
+              "label": "Razor Component (Parameters + EventCallbacks)",
+              "prompt": "Create a Blazor Razor component for {feature} with strongly-typed [Parameter] properties, EventCallback outputs, validation-friendly forms, and accessibility. Include sample usage and a code-behind/partial class option.",
+              "tags": [
+                "a11y",
+                "blazor",
+                "components",
+                "forms",
+                "razor"
+              ]
+            },
+            {
+              "id": "blazor-components-templated",
+              "label": "Templated Component (RenderFragment)",
+              "prompt": "Implement a templated Blazor component using RenderFragment/RenderFragment<T> for {component_name}. Include default templates, named fragments, and type-safe context usage. Provide examples.",
+              "tags": [
+                "blazor",
+                "components",
+                "renderfragment",
+                "templated"
+              ]
+            },
+            {
+              "id": "blazor-components-forms",
+              "label": "EditForm + FluentValidation Pattern",
+              "prompt": "Build a Blazor EditForm for {form_case} using DataAnnotations or FluentValidation. Show validation summary, field-level errors, async submit, and disabling submit while pending.",
+              "tags": [
+                "blazor",
+                "fluentvalidation",
+                "forms",
+                "validation"
+              ]
+            },
+            {
+              "id": "blazor-components-layout",
+              "label": "Layout + Reusable Page Shell",
+              "prompt": "Create a Blazor layout for {app} including navigation menu, breadcrumbs, page title, and responsive design. Ensure ARIA landmarks and keyboard navigation.",
+              "tags": [
+                "a11y",
+                "blazor",
+                "layout",
+                "navigation"
+              ]
+            },
+            {
+              "id": "blazor-components-grid",
+              "label": "Data Grid Pattern (Paging/Sorting/Filtering)",
+              "prompt": "Implement a data grid pattern in Blazor for {entity} with paging, sorting, filtering, virtualization, and loading states. Separate UI from data service cleanly.",
+              "tags": [
+                "blazor",
+                "components",
+                "datagrid",
+                "performance",
+                "virtualization"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "state",
+          "label": "State Management",
+          "prompts": [
+            {
+              "id": "blazor-state-container",
+              "label": "State Container Service Pattern",
+              "prompt": "Design a Blazor state container for {feature} using a scoped service with change notifications. Include immutability guidance, event subscription disposal, and tests.",
+              "tags": [
+                "blazor",
+                "di",
+                "state-management"
+              ]
+            },
+            {
+              "id": "blazor-state-fluxor",
+              "label": "Fluxor/Redux-style State",
+              "prompt": "Set up Fluxor (or equivalent) for {feature} in Blazor: state, actions, reducers, effects, and middleware for logging/errors. Include best practices and sample components.",
+              "tags": [
+                "blazor",
+                "fluxor",
+                "redux",
+                "state-management"
+              ]
+            },
+            {
+              "id": "blazor-state-caching",
+              "label": "Client-side Caching Strategy",
+              "prompt": "Implement client-side caching for {resource} in Blazor (MemoryCache for Server or custom for WASM). Include invalidation and offline notes.",
+              "tags": [
+                "blazor",
+                "caching",
+                "performance"
+              ]
+            },
+            {
+              "id": "blazor-state-forms",
+              "label": "Form State (Dirty/Touched) Management",
+              "prompt": "Track form dirty/touched state in Blazor for {form_case}. Include unsaved-changes guard and reset behavior.",
+              "tags": [
+                "blazor",
+                "forms",
+                "state-management",
+                "ux"
+              ]
+            },
+            {
+              "id": "blazor-state-realtime",
+              "label": "Real-time UI State (SignalR)",
+              "prompt": "Build a real-time Blazor UI update pattern for {scenario} using SignalR. Include reconnection strategy, throttling/batching updates, and disposing subscriptions.",
+              "tags": [
+                "blazor",
+                "realtime",
+                "signalr",
+                "state-management"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "routing",
+          "label": "Routing & Navigation",
+          "prompts": [
+            {
+              "id": "blazor-routing-basic",
+              "label": "App Routing + Parameters",
+              "prompt": "Configure Blazor routing for {app} with route parameters, optional segments, query string parsing, and navigation helpers. Include NavLink active state examples.",
+              "tags": [
+                "blazor",
+                "navigation",
+                "routing"
+              ]
+            },
+            {
+              "id": "blazor-routing-lazy",
+              "label": "Lazy Loading (WASM) & Code Splitting",
+              "prompt": "Implement lazy loading/code splitting in Blazor WebAssembly for {feature}. Explain assembly loading, route splitting, and performance considerations.",
+              "tags": [
+                "blazor",
+                "lazy-loading",
+                "performance",
+                "routing",
+                "wasm"
+              ]
+            },
+            {
+              "id": "blazor-routing-404",
+              "label": "NotFound & Error UI",
+              "prompt": "Add NotFound routing and global error UI for {app}. Include ErrorBoundary usage, logging integration, and recovery actions.",
+              "tags": [
+                "blazor",
+                "errors",
+                "observability",
+                "routing"
+              ]
+            },
+            {
+              "id": "blazor-routing-navlock",
+              "label": "NavigationLock (Unsaved Changes)",
+              "prompt": "Use NavigationLock to prevent losing unsaved changes for {page}. Provide confirm dialog UX and tests.",
+              "tags": [
+                "blazor",
+                "forms",
+                "routing",
+                "ux"
+              ]
+            },
+            {
+              "id": "blazor-routing-deeplinks",
+              "label": "Deep Linkable Filters",
+              "prompt": "Design deep-linkable filters/sort/pagination for {list_page} in Blazor. Ensure URL sync and back/forward correctness.",
+              "tags": [
+                "blazor",
+                "routing",
+                "state-management",
+                "ux"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "auth",
+          "label": "Authentication & Authorization",
+          "prompts": [
+            {
+              "id": "blazor-auth-oidc",
+              "label": "OIDC Authentication (WASM/Server)",
+              "prompt": "Set up OIDC auth for Blazor {hosting_model} (WASM/Server) with PKCE, token storage considerations, and secure logout. Include claims mapping and a protected page.",
+              "tags": [
+                "authentication",
+                "blazor",
+                "oidc",
+                "security"
+              ]
+            },
+            {
+              "id": "blazor-auth-policies",
+              "label": "Authorization Policies & Roles",
+              "prompt": "Implement role/claim-based authorization in Blazor using policies. Show AuthorizeView, [Authorize] attributes, and 401/403 UI handling.",
+              "tags": [
+                "authorization",
+                "blazor",
+                "policies",
+                "security"
+              ]
+            },
+            {
+              "id": "blazor-auth-api",
+              "label": "Securing API Calls with Access Tokens",
+              "prompt": "Create a typed HttpClient for Blazor that attaches access tokens, handles refresh, and maps errors to friendly UI messages.",
+              "tags": [
+                "authentication",
+                "blazor",
+                "httpclient",
+                "security"
+              ]
+            },
+            {
+              "id": "blazor-auth-multitenant",
+              "label": "Multi-tenant Auth Context",
+              "prompt": "Design multi-tenant auth context for {app} in Blazor (tenant selection, claims, headers). Include guardrails to prevent tenant leakage.",
+              "tags": [
+                "authorization",
+                "blazor",
+                "multi-tenancy",
+                "security"
+              ]
+            },
+            {
+              "id": "blazor-auth-hardening",
+              "label": "Security Hardening Checklist",
+              "prompt": "Provide a security hardening checklist for Blazor {hosting_model}: CSRF, XSS, CSP, safe rendering, and secrets handling.",
+              "tags": [
+                "blazor",
+                "csp",
+                "csrf",
+                "security",
+                "xss"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "interop",
+          "label": "JavaScript Interop",
+          "prompts": [
+            {
+              "id": "blazor-interop-wrapper",
+              "label": "JS Interop Wrapper Pattern",
+              "prompt": "Create a Blazor JS interop wrapper for {js_library} with IJSRuntime, module import, and IAsyncDisposable cleanup. Include error handling.",
+              "tags": [
+                "blazor",
+                "js-interop",
+                "typescript"
+              ]
+            },
+            {
+              "id": "blazor-interop-callbacks",
+              "label": "JS-to-.NET Callbacks",
+              "prompt": "Implement JS-to-.NET callbacks for {event_source} using DotNetObjectReference. Include throttling and leak prevention guidance.",
+              "tags": [
+                "blazor",
+                "events",
+                "js-interop",
+                "performance"
+              ]
+            },
+            {
+              "id": "blazor-interop-files",
+              "label": "File Upload/Download via Interop",
+              "prompt": "Design file upload/download in Blazor for {use_case} using InputFile and JS interop when needed. Include progress and validations.",
+              "tags": [
+                "blazor",
+                "file-upload",
+                "js-interop",
+                "security"
+              ]
+            },
+            {
+              "id": "blazor-interop-charts",
+              "label": "Chart Library Integration",
+              "prompt": "Integrate a JS charting library into Blazor for {dashboard} with a typed interop layer and wrapper component lifecycle.",
+              "tags": [
+                "blazor",
+                "charts",
+                "components",
+                "js-interop"
+              ]
+            },
+            {
+              "id": "blazor-interop-perf",
+              "label": "Interop Performance Optimization",
+              "prompt": "Optimize Blazor JS interop for {scenario}: batching calls, minimizing serialization, and measuring impact.",
+              "tags": [
+                "blazor",
+                "js-interop",
+                "performance",
+                "profiling"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "label": "Testing (bUnit)",
+          "prompts": [
+            {
+              "id": "blazor-bunit-template",
+              "label": "bUnit Component Test Template",
+              "prompt": "Write bUnit tests for Blazor component {component}: render, parameters, events, cascading params, and assertions.",
+              "tags": [
+                "blazor",
+                "bunit",
+                "testing",
+                "unit-tests"
+              ]
+            },
+            {
+              "id": "blazor-testing-mocking",
+              "label": "Mocking Services & DI",
+              "prompt": "Create a bUnit setup for {component} that mocks injected services (HttpClient, state, auth). Highlight pitfalls and patterns.",
+              "tags": [
+                "blazor",
+                "di",
+                "mocking",
+                "testing"
+              ]
+            },
+            {
+              "id": "blazor-testing-auth",
+              "label": "Testing Authorized UI",
+              "prompt": "Write bUnit tests for authorized Blazor pages/components, simulating authenticated/unauthenticated users and verifying 401/403 UI states.",
+              "tags": [
+                "authorization",
+                "blazor",
+                "security",
+                "testing"
+              ]
+            },
+            {
+              "id": "blazor-testing-forms",
+              "label": "Testing Forms & Validation",
+              "prompt": "Write tests for Blazor EditForm validation for {form_case}. Assert messages, disable/enable submit, and async submit.",
+              "tags": [
+                "blazor",
+                "forms",
+                "testing",
+                "validation"
+              ]
+            },
+            {
+              "id": "blazor-testing-e2e",
+              "label": "E2E Testing Strategy (Playwright)",
+              "prompt": "Create an E2E testing strategy for Blazor {hosting_model} using Playwright: auth setup, stable selectors, test data, and CI steps.",
+              "tags": [
+                "blazor",
+                "e2e",
+                "playwright",
+                "testing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "label": "Performance & Hosting",
+          "prompts": [
+            {
+              "id": "blazor-perf-wasm",
+              "label": "WASM Startup Performance",
+              "prompt": "Optimize Blazor WebAssembly startup for {app}: trimming, AOT, lazy loading, compression, caching, and measuring TTI.",
+              "tags": [
+                "aot",
+                "blazor",
+                "performance",
+                "trimming",
+                "wasm"
+              ]
+            },
+            {
+              "id": "blazor-perf-server",
+              "label": "Blazor Server Latency & Circuits",
+              "prompt": "Improve Blazor Server performance for {app}: circuit settings, render frequency, throttling updates, scaling considerations.",
+              "tags": [
+                "blazor",
+                "performance",
+                "server",
+                "signalr"
+              ]
+            },
+            {
+              "id": "blazor-perf-render",
+              "label": "Rendering Optimization (Virtualize)",
+              "prompt": "Refactor {list_page} using Virtualize, @key, and minimal re-render patterns. Include profiling steps.",
+              "tags": [
+                "blazor",
+                "performance",
+                "profiling",
+                "virtualization"
+              ]
+            },
+            {
+              "id": "blazor-perf-hosting",
+              "label": "Hosting Model Decision Guide",
+              "prompt": "Compare Blazor Server vs WASM vs Hybrid for {use_case} and recommend based on latency/offline/SEO/cost/security.",
+              "tags": [
+                "architecture",
+                "blazor",
+                "hosting",
+                "tradeoffs"
+              ]
+            },
+            {
+              "id": "blazor-perf-observability",
+              "label": "Observability for Blazor Apps",
+              "prompt": "Add observability to Blazor {hosting_model}: logs, correlation IDs, traces, and performance metrics. Provide dashboards.",
+              "tags": [
+                "blazor",
+                "logging",
+                "metrics",
+                "observability",
+                "tracing"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agentic-ai",
+      "label": "Agentic AI",
+      "type": "system",
+      "groups": [
+        {
+          "id": "agents-design",
+          "label": "Agent Design & Planning",
+          "prompts": [
+            {
+              "id": "agentic-plan",
+              "label": "Task Decomposition & Plan",
+              "prompt": "You are an agentic AI orchestrator. Given goal {goal}, constraints {constraints}, and context {context}, decompose into tasks with dependencies, acceptance criteria, and a verification plan. Output a step plan and a checklist.",
+              "tags": [
+                "agentic-ai",
+                "orchestration",
+                "planning"
+              ]
+            },
+            {
+              "id": "agentic-roles",
+              "label": "Multi-Agent Role Design",
+              "prompt": "Design a multi-agent team for {project}. Define roles (Architect, Developer, Reviewer, QA, SRE), responsibilities, handoff artifacts, and conflict resolution. Include message protocol and state schema.",
+              "tags": [
+                "agentic-ai",
+                "architecture",
+                "multi-agent"
+              ]
+            },
+            {
+              "id": "agentic-memory",
+              "label": "Memory & Context Strategy",
+              "prompt": "Propose memory strategy for agents on {project}: short-term context, long-term memory, retrieval, summarization cadence, and privacy boundaries. Include failure modes and mitigations.",
+              "tags": [
+                "agentic-ai",
+                "memory",
+                "rag"
+              ]
+            },
+            {
+              "id": "agentic-eval",
+              "label": "Evaluation Harness for Agents",
+              "prompt": "Design an evaluation harness for agent performance on {workflow}. Define metrics (success rate, latency, cost, safety), test suites, golden tasks, and regression process.",
+              "tags": [
+                "agentic-ai",
+                "evaluation",
+                "metrics"
+              ]
+            },
+            {
+              "id": "agentic-graph",
+              "label": "State Machine / Graph Workflow",
+              "prompt": "Model an agent workflow for {use_case} as a state machine/graph: states, transitions, tools used, and stopping conditions. Output Mermaid diagram and pseudocode.",
+              "tags": [
+                "agentic-ai",
+                "mermaid",
+                "state-machine",
+                "workflow"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "coding-agents",
+          "label": "Coding Agents",
+          "prompts": [
+            {
+              "id": "agentic-pr",
+              "label": "PR Automation Agent",
+              "prompt": "Create an agent prompt that implements change request {change_request}: create branch, edit files, run tests, and open PR with description, risk notes, and rollout plan. Include tool-call placeholders.",
+              "tags": [
+                "agentic-ai",
+                "automation",
+                "coding",
+                "pull-request"
+              ]
+            },
+            {
+              "id": "agentic-refactor",
+              "label": "Refactoring Agent (Safe)",
+              "prompt": "Write an agent prompt to refactor {module} safely: identify smells, propose steps, update code, update tests, and provide diff-oriented summary. No behavior change unless specified.",
+              "tags": [
+                "agentic-ai",
+                "coding",
+                "refactoring",
+                "testing"
+              ]
+            },
+            {
+              "id": "agentic-debug",
+              "label": "Debugging Agent (Repro-first)",
+              "prompt": "Create an agent prompt to debug {issue}: minimal repro, hypothesis list, instrumentation, targeted fix, and verification. Output root cause and prevention actions.",
+              "tags": [
+                "agentic-ai",
+                "coding",
+                "debugging",
+                "observability"
+              ]
+            },
+            {
+              "id": "agentic-docs",
+              "label": "Documentation Agent",
+              "prompt": "Create an agent prompt to generate/refresh documentation for {repo}: architecture overview, API docs, runbooks, onboarding. Ensure examples are accurate and point to source files.",
+              "tags": [
+                "agentic-ai",
+                "automation",
+                "documentation"
+              ]
+            },
+            {
+              "id": "agentic-secfix",
+              "label": "Secure Fix Agent",
+              "prompt": "Create an agent prompt to address security finding {finding}: least-privilege changes, validation, dependency upgrades, and tests. Include impact summary.",
+              "tags": [
+                "agentic-ai",
+                "coding",
+                "security",
+                "testing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "test-agents",
+          "label": "Testing & QA Agents",
+          "prompts": [
+            {
+              "id": "agentic-testgen",
+              "label": "Test Generation Agent",
+              "prompt": "Create an agent prompt to generate unit/integration tests for {component}. Require coverage of edge cases and deterministic execution.",
+              "tags": [
+                "agentic-ai",
+                "test-generation",
+                "testing"
+              ]
+            },
+            {
+              "id": "agentic-flaky",
+              "label": "Flaky Test Triage Agent",
+              "prompt": "Create an agent prompt to triage flaky tests in {suite}: find nondeterminism, stabilize, and propose monitoring plan.",
+              "tags": [
+                "agentic-ai",
+                "ci",
+                "flaky-tests",
+                "testing"
+              ]
+            },
+            {
+              "id": "agentic-gates",
+              "label": "Quality Gates Agent",
+              "prompt": "Design an agent prompt that enforces quality gates for {repo}: lint, tests, security scan, coverage, performance budgets. Provide remediation.",
+              "tags": [
+                "agentic-ai",
+                "ci",
+                "quality",
+                "testing"
+              ]
+            },
+            {
+              "id": "agentic-load",
+              "label": "Load Test Scenario Agent",
+              "prompt": "Create an agent prompt to design load tests for {endpoint_or_flow}: scenarios, ramp profile, SLAs, monitoring, analysis. Output k6/JMeter pseudo-config.",
+              "tags": [
+                "agentic-ai",
+                "load-testing",
+                "performance",
+                "testing"
+              ]
+            },
+            {
+              "id": "agentic-a11y",
+              "label": "A11y/UX Review Agent",
+              "prompt": "Create an agent prompt to review UI {screen} for accessibility and UX. Output actionable issues with severity and fixes.",
+              "tags": [
+                "a11y",
+                "agentic-ai",
+                "review",
+                "ux"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "devops-agents",
+          "label": "DevOps/Platform Agents",
+          "prompts": [
+            {
+              "id": "agentic-runbook",
+              "label": "Runbook Generator Agent",
+              "prompt": "Create an agent prompt to generate operational runbook for {service}: alerts, dashboards, failures, mitigation, escalation, postmortem template.",
+              "tags": [
+                "agentic-ai",
+                "devops",
+                "observability",
+                "runbook"
+              ]
+            },
+            {
+              "id": "agentic-incident",
+              "label": "Incident Triage Agent",
+              "prompt": "Create an agent prompt to triage incident {incident}: timeline, blast radius, investigate logs/metrics/traces, mitigate, and follow-ups.",
+              "tags": [
+                "agentic-ai",
+                "devops",
+                "incident",
+                "sre"
+              ]
+            },
+            {
+              "id": "agentic-deploy",
+              "label": "Deployment Planner Agent",
+              "prompt": "Create an agent prompt to plan deployment for {release}: steps, canary, rollback, comms.",
+              "tags": [
+                "agentic-ai",
+                "deployment",
+                "devops",
+                "release"
+              ]
+            },
+            {
+              "id": "agentic-finops",
+              "label": "FinOps Cost Optimizer Agent",
+              "prompt": "Create an agent prompt to optimize cloud cost for {workload}: identify spend, right-size, scaling, guardrails. Output prioritized actions.",
+              "tags": [
+                "agentic-ai",
+                "cloud",
+                "cost",
+                "finops"
+              ]
+            },
+            {
+              "id": "agentic-iac",
+              "label": "IaC Generator Agent",
+              "prompt": "Create an agent prompt to generate/update IaC for {platform} (Terraform/Bicep) with IAM least privilege, secrets handling, and validation steps.",
+              "tags": [
+                "agentic-ai",
+                "cloud",
+                "iac",
+                "security"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rag-tools",
+          "label": "RAG, Tools & Integrations",
+          "prompts": [
+            {
+              "id": "agentic-rag",
+              "label": "RAG Architecture Prompt",
+              "prompt": "Design a RAG system for {use_case}: chunking, embeddings, retrieval, reranking, citations, evaluation, ingestion pipeline, access controls.",
+              "tags": [
+                "agentic-ai",
+                "architecture",
+                "rag"
+              ]
+            },
+            {
+              "id": "agentic-tools",
+              "label": "Tool Catalog & Schemas",
+              "prompt": "Create a tool catalog for agents in {domain}: inputs/outputs, errors, timeouts, idempotency, logging. Provide JSON schemas.",
+              "tags": [
+                "agentic-ai",
+                "schemas",
+                "tools"
+              ]
+            },
+            {
+              "id": "agentic-git-tools",
+              "label": "Git/CI Tool Interfaces",
+              "prompt": "Specify tool interfaces for Git operations and CI checks for agent workflows. Add safety checks against destructive actions.",
+              "tags": [
+                "agentic-ai",
+                "ci",
+                "git",
+                "tools"
+              ]
+            },
+            {
+              "id": "agentic-vector",
+              "label": "Vector Store Selection Guide",
+              "prompt": "Compare vector store options for {constraints}: latency, cost, scale, filtering, multi-tenancy, backup/restore. Recommend and plan migration.",
+              "tags": [
+                "agentic-ai",
+                "rag",
+                "tradeoffs",
+                "vectorstore"
+              ]
+            },
+            {
+              "id": "agentic-obs",
+              "label": "Agent Observability",
+              "prompt": "Design observability for agent workflows: step/tool traces, prompt/version tracking, cost metrics, redaction, audit trails. Provide dashboards/alerts.",
+              "tags": [
+                "agentic-ai",
+                "audit",
+                "metrics",
+                "observability"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "governance",
+          "label": "Safety, Governance & Guardrails",
+          "prompts": [
+            {
+              "id": "agentic-guardrails",
+              "label": "Guardrails Policy (Safety)",
+              "prompt": "Define guardrails for agent {agent_name}: allowed tools, forbidden actions, approval gates, data access policies, escalation paths. Include examples.",
+              "tags": [
+                "agentic-ai",
+                "governance",
+                "guardrails",
+                "security"
+              ]
+            },
+            {
+              "id": "agentic-privacy",
+              "label": "Privacy & Data Handling",
+              "prompt": "Create privacy policy for agent handling {data_types}: minimization, retention, redaction, access logs, incident response.",
+              "tags": [
+                "agentic-ai",
+                "compliance",
+                "privacy",
+                "security"
+              ]
+            },
+            {
+              "id": "agentic-hitl",
+              "label": "Human-in-the-Loop Controls",
+              "prompt": "Design human-in-the-loop checkpoints for {workflow}: approvals, diff review, risk scoring, rollback. Provide reviewer prompt templates.",
+              "tags": [
+                "agentic-ai",
+                "governance",
+                "human-in-the-loop"
+              ]
+            },
+            {
+              "id": "agentic-injection",
+              "label": "Prompt Injection & Tool Abuse Defense",
+              "prompt": "Create defense plan against prompt injection/tool abuse for {agent_system}: sanitization, sandboxing, allowlists, and evaluation tests.",
+              "tags": [
+                "agentic-ai",
+                "prompt-injection",
+                "red-teaming",
+                "security"
+              ]
+            },
+            {
+              "id": "agentic-audit",
+              "label": "Auditability & Compliance Pack",
+              "prompt": "Define audit logging and compliance evidence collection for agent actions in {org}: immutable logs, traceability to tickets, retention.",
+              "tags": [
+                "agentic-ai",
+                "audit",
+                "compliance",
+                "governance"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

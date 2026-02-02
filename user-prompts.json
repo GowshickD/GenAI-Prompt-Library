@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "categories": [
+    {
+      "id": "user",
+      "label": "User Prompts",
+      "type": "user",
+      "groups": []
+    }
+  ]
+}

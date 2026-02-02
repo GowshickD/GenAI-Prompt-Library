@@ -1,0 +1,351 @@
+{
+  "name": "prompt-library",
+  "publisher": "Gowshick",
+  "displayName": "Prompt Library",
+  "description": "Professional AI prompt library with context-aware suggestions, advanced search, real-time analytics, and seamless Copilot/Windsurf integration. Features intelligent prompt matching, usage tracking, favorites, export/import, and enterprise-ready visual design.",
+  "version": "0.1.6",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Snippets",
+    "Machine Learning",
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "icon": "images/icon.png",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "promptLibraryContainer",
+          "title": "Prompt Library",
+          "icon": "$(library)"
+        }
+      ]
+    },
+    "views": {
+      "promptLibraryContainer": [
+        {
+          "id": "promptLibraryView",
+          "name": "Prompts",
+          "when": "true",
+          "icon": "$(library)"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "prompt-library.usePrompt",
+        "title": "Copy to Clipboard"
+      },
+      {
+        "command": "prompt-library.search",
+        "title": "Search Prompts",
+        "icon": "$(search)"
+      },
+      {
+        "command": "prompt-library.quickPickSearch",
+        "title": "Filter by Tags",
+        "icon": "$(tag)"
+      },
+      {
+        "command": "prompt-library.clearSearch",
+        "title": "Clear Search",
+        "icon": "$(clear-all)"
+      },
+      {
+        "command": "prompt-library.addPrompt",
+        "title": "Add Prompt",
+        "icon": "$(add)"
+      },
+      {
+        "command": "prompt-library.editPrompt",
+        "title": "Edit Prompt",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "prompt-library.deletePrompt",
+        "title": "Delete Prompt",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "prompt-library.sendToContributor",
+        "title": "📤 Send to Reviewer",
+        "icon": "$(mail)"
+      },
+      {
+        "command": "prompt-library.toggleFavorite",
+        "title": "Toggle Favorite",
+        "icon": "$(star)"
+      },
+      {
+        "command": "prompt-library.showFavoritesOnly",
+        "title": "Show Favorites Only",
+        "icon": "$(star-full)"
+      },
+      {
+        "command": "prompt-library.showAllPrompts",
+        "title": "Show All Prompts",
+        "icon": "$(library)"
+      },
+      {
+        "command": "prompt-library.showRecentPrompts",
+        "title": "Show Recent Prompts Only",
+        "icon": "$(clock)"
+      },
+      {
+        "command": "prompt-library.debugWindsurfCommands",
+        "title": "Debug: Show Available Windsurf Commands",
+        "icon": "$(debug)"
+      },
+      {
+        "command": "prompt-library.exportPrompts",
+        "title": "Export Prompts",
+        "icon": "$(export)"
+      },
+      {
+        "command": "prompt-library.importPrompts",
+        "title": "Import Prompts",
+        "icon": "$(import)"
+      },
+      {
+        "command": "prompt-library.advancedSearch",
+        "title": "Advanced Search",
+        "icon": "$(search-view)"
+      },
+      {
+        "command": "prompt-library.showAnalytics",
+        "title": "Usage Analytics",
+        "icon": "$(graph)"
+      },
+      {
+        "command": "prompt-library.contextAwarePrompts",
+        "title": "Context-Aware Prompts",
+        "icon": "$(target)"
+      },
+      {
+        "command": "prompt-library.showContextMenu",
+        "title": "Context-Aware Prompts",
+        "icon": "$(menu)"
+      },
+      {
+        "command": "prompt-library.quickActions",
+        "title": "Quick Actions",
+        "icon": "$(zap)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "prompt-library.contextAwarePrompts",
+          "group": "1_ai",
+          "when": "view == promptLibraryView"
+        },
+        {
+          "command": "prompt-library.search",
+          "group": "navigation@1",
+          "when": "view == promptLibraryView"
+        },
+        {
+          "command": "prompt-library.clearSearch",
+          "group": "navigation@2",
+          "when": "view == promptLibraryView"
+        },
+        {
+          "command": "prompt-library.quickPickSearch",
+          "group": "2_search",
+          "when": "view == promptLibraryView"
+        },
+        {
+          "command": "prompt-library.advancedSearch",
+          "group": "2_search",
+          "when": "view == promptLibraryView"
+        },
+        {
+          "command": "prompt-library.showFavoritesOnly",
+          "group": "3_filter",
+          "when": "view == promptLibraryView"
+        },
+        {
+          "command": "prompt-library.showRecentPrompts",
+          "group": "3_filter",
+          "when": "view == promptLibraryView"
+        },
+        {
+          "command": "prompt-library.showAllPrompts",
+          "group": "3_filter",
+          "when": "view == promptLibraryView"
+        },
+        {
+          "command": "prompt-library.addPrompt",
+          "group": "navigation@3",
+          "when": "view == promptLibraryView"
+        },
+        {
+          "command": "prompt-library.importPrompts",
+          "group": "5_data",
+          "when": "view == promptLibraryView"
+        },
+        {
+          "command": "prompt-library.exportPrompts",
+          "group": "5_data",
+          "when": "view == promptLibraryView"
+        },
+        {
+          "command": "prompt-library.showAnalytics",
+          "group": "6_insights",
+          "when": "view == promptLibraryView"
+        },
+        {
+          "command": "prompt-library.quickActions",
+          "group": "0_primary",
+          "when": "view == promptLibraryView"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "prompt-library.toggleFavorite",
+          "group": "inline",
+          "when": "viewItem == prompt-system || viewItem == prompt-user"
+        },
+        {
+          "command": "prompt-library.editPrompt",
+          "group": "inline",
+          "when": "viewItem == prompt-user"
+        },
+        {
+          "command": "prompt-library.deletePrompt",
+          "group": "inline",
+          "when": "viewItem == prompt-user"
+        },
+        {
+          "command": "prompt-library.sendToContributor",
+          "group": "inline",
+          "when": "viewItem == prompt-user"
+        },
+        {
+          "command": "prompt-library.addPrompt",
+          "group": "inline",
+          "when": "viewItem == category-user"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "prompt-library.showContextMenu",
+          "group": "prompts",
+          "when": "editorTextFocus"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "prompt-library.search",
+        "key": "ctrl+shift+f",
+        "mac": "cmd+shift+f",
+        "when": "view == promptLibraryView && focusedView == promptLibraryView"
+      },
+      {
+        "command": "prompt-library.clearSearch",
+        "key": "escape",
+        "mac": "escape",
+        "when": "view == promptLibraryView && focusedView == promptLibraryView"
+      },
+      {
+        "command": "prompt-library.contextAwarePrompts",
+        "key": "ctrl+shift+a",
+        "mac": "cmd+shift+a",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "prompt-library.quickActions",
+        "key": "ctrl+shift+q",
+        "mac": "cmd+shift+q"
+      }
+    ],
+    "configuration": {
+      "title": "Prompt Library",
+      "properties": {
+        "promptLibrary.copilot.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable sending prompts to Copilot Chat (if available)"
+        },
+        "promptLibrary.windsurf.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable sending prompts to Windsurf chat (if available)"
+        },
+        "promptLibrary.windsurf.command": {
+          "type": "string",
+          "default": "Codeium.codeium-enterprise-updater",
+          "description": "Windsurf command ID to send prompt text to chat input. Use 'Codeium.codeium-enterprise-updater' for Windsurf or custom command ID for other integrations"
+        },
+        "promptLibrary.copyToClipboard": {
+          "type": "boolean",
+          "default": false,
+          "description": "Always copy prompt to clipboard in addition to sending to chat"
+        },
+        "promptLibrary.azureOpenAI.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable prompt evaluation using Azure OpenAI"
+        },
+        "promptLibrary.azureOpenAI.endpoint": {
+          "type": "string",
+          "default": "https://openai-humana-demo.openai.azure.com/",
+          "description": "Azure OpenAI endpoint URL"
+        },
+        "promptLibrary.azureOpenAI.key": {
+          "type": "string",
+          "default": "38f3uEfMqGrmlLTYB8phtBmUiaNaeYY4EkCVlutNRlmH5QHqh3DIJQQJ99CAACYeBjFXJ3w3AAABACOG6d6X",
+          "description": "Azure OpenAI API key"
+        },
+        "promptLibrary.azureOpenAI.deploymentName": {
+          "type": "string",
+          "default": "gpt-4",
+          "description": "Azure OpenAI deployment name for prompt evaluation"
+        },
+        "promptLibrary.azureOpenAI.apiVersion": {
+          "type": "string",
+          "default": "2023-05-15",
+          "description": "Azure OpenAI API version"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "dependencies": {
+    "axios": "^1.13.4",
+    "openai": "^6.17.0"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.9.36",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/nodemailer": "^7.0.4",
+    "@types/vscode": "^1.90.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.1",
+    "nodemailer": "^6.10.1",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.3",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
