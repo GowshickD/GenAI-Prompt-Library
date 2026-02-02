@@ -10,8 +10,8 @@ export interface AzureOpenAIConfig {
 }
 
 export const azureOpenAIConfig: AzureOpenAIConfig = {
-    endpoint: 'https://promptai.openai.azure.com/',
-    key: 'O7G6Gbr7TmarJUljb8UOLviK7c55uFvNVZsnwCSYLwg3Uka5yErNJQQJ99CAACYeBjFXJ3w3AAABACOGB3cB',
+    endpoint: '',
+    key: '',
     deploymentName: 'gpt-4o-mini', // Default deployment name, can be updated via settings
     apiVersion: '2024-04-01-preview' // Default API version, can be updated via settings
 };

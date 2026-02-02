@@ -74,8 +74,8 @@ export class PromptEvaluationService {
             
             // Initialize the OpenAI client with Azure configuration
             const openai = new OpenAI({
-                apiKey: 'O7G6Gbr7TmarJUljb8UOLviK7c55uFvNVZsnwCSYLwg3Uka5yErNJQQJ99CAACYeBjFXJ3w3AAABACOGB3cB',
-                baseURL: 'https://promptai.openai.azure.com/openai/v1',
+                apiKey: '',
+                baseURL: '',
             });
             
             console.log('Sending evaluation request to Azure OpenAI...');
